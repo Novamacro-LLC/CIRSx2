@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d1kqxdjxhn=n-ei61)cs9l%3oiu8r8+fuc5%!ij3tzs@02lx%&'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,11 +82,11 @@ WSGI_APPLICATION = 'CIRSx2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cirsx_dev',
-        'USER': 'doadmin',
-        'PASSWORD': 'ydi1v6xzjfadvs6m',
-        'HOST': 'db-postgresql-nyc1-41364-do-user-6170808-0.db.ondigitalocean.com',
-        'PORT': '25060'
+        'NAME': os.environ.get('dbName'),
+        'USER': os.environ.get('dbUser'),
+        'PASSWORD': os.environ.get('dbPassword'),
+        'HOST': os.environ.get('dbHost'),
+        'PORT': os.environ.get('dbPort')
     }
 }
 

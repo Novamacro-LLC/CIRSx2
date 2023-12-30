@@ -1213,7 +1213,18 @@
 }
 
 .body-2 {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  -webkit-text-fill-color: inherit;
+  background-color: #fff;
   background-image: linear-gradient(gray, #fff);
+  background-clip: border-box;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: block;
 }
 
 .select-field {
@@ -1295,6 +1306,10 @@
 
 .list-item-3, .list-item-4 {
   margin-bottom: 10px;
+}
+
+.form {
+  filter: blur();
 }
 
 @media screen and (max-width: 991px) {

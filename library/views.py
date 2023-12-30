@@ -1,10 +1,12 @@
 from django.shortcuts import render
+from .models import Document
 
 
 def reference_papers(request):
     rsch = Document.objects.filter(doctyp_num=2).order_by('title')
+    #rsch = Document.objects
     context = {'rsch': rsch}
-    render(request, 'reference_papers.html', context)
+    return render(request, 'reference_papers.html', context)
 
 
 def bibliographies(request):

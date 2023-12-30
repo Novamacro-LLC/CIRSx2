@@ -6,9 +6,10 @@
 <div class="w-layout-blockcontainer w-container">
     <div>
       <ul role="list" class="w-list-unstyled">
-        <li class="list-item-2">Link 1</li>
-        <li class="list-item-3">Link2</li>
-        <li class="list-item-4">Link 3</li>
+        {% for i in rsch  %}
+        <li><a href="{{ i.doc_path }}">{{ i.title }}</a></li>
+        <br>
+        {% endfor %}
       </ul>
     </div>
   </div>

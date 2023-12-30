@@ -12,4 +12,4 @@ def reference_papers(request):
 def bibliographies(request):
     bib = Document.objects.filter(doctyp_num=1).order_by('title')
     context = {'bib': bib}
-    render(request, 'bibliographies.html', context)
+    return render(request, 'bibliographies.html', context)

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}{% load static %}{% block content %}
+<section class="section">
+    <h1 class="heading-3">Bibliographies<br>‍</h1>
+    <h3 class="heading-4">In association with The Learning Center</h3>
+</section>
+<div class="w-layout-blockcontainer w-container">
+    <div>
+      <ul role="list" class="w-list-unstyled">
+        {% for i in bib  %}
+        <li><a href="{{ i.doc_path }}">{{ i.title }}</a></li>
+        <br>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock content %}

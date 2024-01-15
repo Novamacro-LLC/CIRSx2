@@ -27,6 +27,15 @@ class DocumentRoute(models.Model):
         return self.document_route
 
 
+class Curations(models.Model):
+    cur_name = models.CharField(max_length=100)
+    cat_name = models.CharField(max_length=100)
+    subcat_name = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.cat_name, " ", self.subcat_name
+
+
 class Document(models.Model):
     doctyp_num = models.ForeignKey(DocumentType, null=True, on_delete=models.SET_NULL)
     aud_num = models.ForeignKey(Audience, null=True, on_delete=models.SET_NULL)
@@ -40,6 +49,7 @@ class Document(models.Model):
 #   event = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL, blank=True)
     tier = models.ForeignKey(Group, null=True, on_delete=models.SET_NULL, blank=True)
     doc_route = models.ForeignKey(DocumentRoute, null=True, on_delete=models.SET_NULL)
+    curr_num = models.ForeignKey(Curations, null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.title

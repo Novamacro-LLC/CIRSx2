@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Document
+from .models import Document, Curations
 
 
 def reference_papers(request):
@@ -13,3 +13,11 @@ def bibliographies(request):
     bib = Document.objects.filter(doctyp_num=1).order_by('title')
     context = {'bib': bib}
     return render(request, 'bibliographies.html', context)
+
+
+def curation(request):
+    cur = Curations.objects.get(cur_name='Video Curration')
+    cat = cur.objects.values('cat_name', flat=True).distinct()
+    subcat = cur.objects.values('subcat_name', flat=True).distinct()
+    lst = Document.objects.filter(curr_num__cur_name='Video Curration')
+    context = {'cat': cat, 'subcat': subcat, 'lst': lst}

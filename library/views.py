@@ -16,8 +16,9 @@ def bibliographies(request):
 
 
 def curation(request):
-    cur = Curations.objects.get(cur_name='Video Curration')
-    cat = cur.objects.values('cat_name', flat=True).distinct()
-    subcat = cur.objects.values('subcat_name', flat=True).distinct()
+    cur = Curations.objects.filter(cur_name='Video Curration')
+    cat = cur.distinct('cat_name')
+    subcat = cur.filter(subcat_name__isnull=False).distinct('subcat_name')
     lst = Document.objects.filter(curr_num__cur_name='Video Curration')
-    context = {'cat': cat, 'subcat': subcat, 'lst': lst}
+    context = {'cat': cat, 'cur': cur, 'lst': lst}
+    return render(request, 'curation.html', context)

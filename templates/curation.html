@@ -1,0 +1,36 @@
+{% extends 'base.html' %}{% load static %}{% block content %}
+  <section class="section">
+    <h1 class="heading-3">Please select the category of videos</h1>
+    <div class="w-row">
+      <div class="w-col w-col-6">
+        <div data-hover="false" data-delay="0" class="w-dropdown">
+          <div class="dropdown-toggle-2 w-dropdown-toggle">
+            <div class="icon w-icon-dropdown-toggle"></div>
+            <div class="text-block-3">Category </div>
+          </div>
+          <nav class="w-dropdown-list">
+              {% for i in cur %}
+              <a href="#" class="w-dropdown-link">{{ i.cat_name }} - {{ i.subcat_name }}</a>
+              {% endfor %}
+
+          </nav>
+        </div>
+        <div data-hover="false" data-delay="0" class="w-dropdown">
+          <div class="dropdown-toggle-2 w-dropdown-toggle">
+            <div class="icon w-icon-dropdown-toggle"></div>
+            <div class="text-block-3">Sub-Category </div>
+          </div>
+          <nav class="w-dropdown-list">
+            {% for i in cat %}
+              <a href="#" class="w-dropdown-link">{{ i.cat_name }} - </a>
+            {% endfor %}
+            <a href="#" class="w-dropdown-link">Link 1</a>
+            <a href="#" class="w-dropdown-link">Link 2</a>
+            <a href="#" class="w-dropdown-link">Link 3</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -35,6 +35,9 @@ class Curations(models.Model):
     def __str__(self):
         return self.cat_name, " ", self.subcat_name
 
+    class Meta:
+        ordering = ('cat_name', 'subcat_name',)
+
 
 class Document(models.Model):
     doctyp_num = models.ForeignKey(DocumentType, null=True, on_delete=models.SET_NULL)

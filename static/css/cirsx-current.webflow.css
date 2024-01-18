@@ -48,7 +48,20 @@
 }
 
 .navbar-logo-left {
+  float: none;
+  clear: none;
+  aspect-ratio: auto;
+  opacity: 1;
+  outline-offset: 0px;
+  -webkit-text-fill-color: inherit;
+  mix-blend-mode: normal;
+  object-fit: contain;
+  background-clip: border-box;
+  outline: 3px #333;
   margin-bottom: 0;
+  position: static;
+  top: -1px;
+  overflow: visible;
 }
 
 .navbar-logo-left-container {
@@ -1310,6 +1323,10 @@
 
 .form {
   filter: blur();
+}
+
+.container-4 {
+  padding-top: 20px;
 }
 
 @media screen and (max-width: 991px) {

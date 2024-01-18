@@ -31,6 +31,7 @@ class Curations(models.Model):
     cur_name = models.CharField(max_length=100)
     cat_name = models.CharField(max_length=100)
     subcat_name = models.CharField(max_length=100, null=True)
+    cat_ordr = models.IntegerField(default=1)
 
     def __str__(self):
         return self.cat_name, " ", self.subcat_name

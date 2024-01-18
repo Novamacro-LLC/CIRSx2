@@ -16,7 +16,7 @@ def bibliographies(request):
 
 
 def curation(request):
-    cur = Curations.objects.filter(cur_name='Video Curration')
+    cur = Curations.objects.filter(cur_name='Video Curration').order_by('cat_ordr')
     cat = cur.distinct('cat_name')
     subcat = cur.filter(subcat_name__isnull=False).distinct('subcat_name')
     lst = Document.objects.filter(curr_num__cur_name='Video Curration')

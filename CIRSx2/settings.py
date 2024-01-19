@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'CIRSx2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cirsx_dev', #os.environ.get('dbName'),
-        'USER': 'doadmin', #os.environ.get('dbUser'),
-        'PASSWORD': 'ydi1v6xzjfadvs6m', #os.environ.get('dbPassword'),
-        'HOST': 'db-postgresql-nyc1-41364-do-user-6170808-0.db.ondigitalocean.com', #os.environ.get('dbHost'),
-        'PORT': '25060', #os.environ.get('dbPort')
+        'NAME':  os.environ.get('dbName'),
+        'USER': os.environ.get('dbUser'),
+        'PASSWORD': os.environ.get('dbPassword'),
+        'HOST': os.environ.get('dbHost'),
+        'PORT': os.environ.get('dbPort')
     }
 }
 
@@ -127,13 +127,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
+"""
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
+"""
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

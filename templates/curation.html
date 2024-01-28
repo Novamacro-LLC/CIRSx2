@@ -1,27 +1,25 @@
 {% extends 'base.html' %}{% load static %}{% block content %}
+
   <section class="section">
     <h1 class="heading-3">Please select the category of videos</h1>
-    <div class="w-layout-blockcontainer container-4 w-container">
-      <div data-hover="false" data-delay="0" class="w-dropdown">
-        <div class="dropdown-toggle-2 w-dropdown-toggle">
-          <div class="icon w-icon-dropdown-toggle"></div>
-          <div class="text-block-3">Categories </div>
-        </div>
-        <nav class="w-dropdown-list">
-              {% for i in cur %}
-              <a href="#{{ i.subcat_name }}" class="w-dropdown-link">{{ i.cat_name }} - {{ i.subcat_name }}</a>
-              {% endfor %}
-        </nav>
-      </div>
-    </div>
   </section>
-      <div class="w-layout-blockcontainer w-container">
-    <ul role="list" class="w-list-unstyled">
-    {% for l in lst %}
-      <li>
-        <h3>
-          <a id="{{ l.curr_num.cat_name }} - {{ l.curr_num.subcat_name }}" href="{{l.doc_path }}">{{ l.curr_num.cat_name }} - {{ l.curr_num.subcat_name }}</a>
-        </h3>
+  <div class="w-layout-blockcontainer container-5 w-container">
+    <ul role="list" class="list">
+    {% for i in cat %}
+      <li class="list-item">
+        <div data-hover="false" data-delay="0" class="curationlistitem w-clearfix w-dropdown">
+          <div class="dropdown-toggle-4 w-clearfix w-dropdown-toggle">
+            <div class="icon-3 w-icon-dropdown-toggle"></div>
+            <div class="text-block-5">{{ i.cat_name }}</div>
+          </div>
+          <nav class="w-dropdown-list">
+          {% for l in lst %}
+              {% if i.cat_name == l.curr_num.cat_name %}
+                <a href="{{l.doc_path}}" class="w-dropdown-link">{{ l.title }}</a>
+              {% endif %}
+          {% endfor %}
+          </nav>
+        </div>
       </li>
     {% endfor %}
     </ul>

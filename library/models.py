@@ -29,15 +29,24 @@ class DocumentRoute(models.Model):
 
 class Curations(models.Model):
     cur_name = models.CharField(max_length=100)
-    cat_name = models.CharField(max_length=100)
-    subcat_name = models.CharField(max_length=100, null=True)
-    cat_ordr = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.cat_name, " ", self.subcat_name
+        return self.cur_name
 
     class Meta:
-        ordering = ('cat_name', 'subcat_name',)
+        ordering = ('cur_name',)
+
+
+class CurationCategory(models.Model):
+    cat_name = models.CharField(max_length=100)
+    cat_order = models.IntegerField()
+    cur_num = models.ForeignKey(Curations, null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.cat_name
+
+    class Meta:
+        ordering = ('cat_name', 'cat_order')
 
 
 class Document(models.Model):
@@ -54,6 +63,7 @@ class Document(models.Model):
     tier = models.ForeignKey(Group, null=True, on_delete=models.SET_NULL, blank=True)
     doc_route = models.ForeignKey(DocumentRoute, null=True, on_delete=models.SET_NULL)
     curr_num = models.ForeignKey(Curations, null=True, blank=True, on_delete=models.SET_NULL)
+    cat_num = models.ManyToManyField(CurationCategory)
 
     def __str__(self):
         return self.title

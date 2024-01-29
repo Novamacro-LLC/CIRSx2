@@ -62,7 +62,6 @@ class Document(models.Model):
 #   event = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL, blank=True)
     tier = models.ForeignKey(Group, null=True, on_delete=models.SET_NULL, blank=True)
     doc_route = models.ForeignKey(DocumentRoute, null=True, on_delete=models.SET_NULL)
-    curr_num = models.ForeignKey(Curations, null=True, blank=True, on_delete=models.SET_NULL)
     cat_num = models.ManyToManyField(CurationCategory)
 
     def __str__(self):

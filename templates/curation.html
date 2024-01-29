@@ -5,23 +5,22 @@
   </section>
   <div class="w-layout-blockcontainer container-5 w-container">
     <ul role="list" class="list">
-    {% for i in cat %}
-      <li class="list-item">
-        <div data-hover="false" data-delay="0" class="curationlistitem w-clearfix w-dropdown">
-          <div class="dropdown-toggle-4 w-clearfix w-dropdown-toggle">
-            <div class="icon-3 w-icon-dropdown-toggle"></div>
-            <div class="text-block-5">{{ i.cat_name }}</div>
-          </div>
-          <nav class="w-dropdown-list">
-          {% for l in lst %}
-              {% if i.cat_name == l.curr_num.cat_name %}
-                <a href="{{l.doc_path}}" class="w-dropdown-link">{{ l.title }}</a>
-              {% endif %}
-          {% endfor %}
-          </nav>
-        </div>
-      </li>
-    {% endfor %}
+        {% regroup lst by cat_name as category  %}
+        {% for c in category %}
+                <li class="list-item">
+                    <div data-hover="false" data-delay="0" class="curationlistitem w-clearfix w-dropdown">
+                        <div class="dropdown-toggle-4 w-clearfix w-dropdown-toggle">
+                        <div class="icon-3 w-icon-dropdown-toggle"></div>
+                          <div class="text-block-5">{{ c.grouper }}</div>
+                      </div>
+                      <nav class="w-dropdown-list">
+                          {% for d in c.list %}
+                            <a href="{{d.doc_path}}" class="curationlistitem w-clearfix w-dropdown w-dropdown-link">{{ d.title }}</a>
+                          {% endfor %}
+                      </nav>
+                    </div>
+                </li>
+        {% endfor %}
     </ul>
   </div>
 {% endblock %}

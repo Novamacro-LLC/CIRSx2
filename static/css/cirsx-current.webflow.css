@@ -1256,6 +1256,8 @@
 .heading-3 {
   text-align: center;
   margin: 0 20px;
+  font-size: 24px;
+  display: block;
 }
 
 .section {
@@ -1398,6 +1400,7 @@
   flex-flow: wrap;
   justify-content: center;
   align-items: stretch;
+  font-size: 24px;
   list-style-type: none;
   display: flex;
 }
@@ -1407,7 +1410,7 @@
   direction: ltr;
   text-transform: none;
   overflow-wrap: normal;
-  font-size: 60px;
+  font-size: 24px;
 }
 
 .text-block-5 {
@@ -1418,7 +1421,7 @@
   word-break: normal;
   padding-right: 0;
   font-family: Exo, sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   line-height: 70px;
   display: inline-block;
   position: relative;
@@ -1428,7 +1431,9 @@
   float: right;
   clear: left;
   border: 0 rgba(0, 0, 0, 0);
-  font-size: 42px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 41px;
   display: block;
 }
 
@@ -1437,13 +1442,26 @@
   float: right;
   justify-content: flex-start;
   font-size: 26px;
-  display: inline-block;
+  display: block;
   position: relative;
   top: 20px;
 }
 
 .list-item-7 {
   border: 1px solid #000;
+}
+
+.list-item-8 {
+  display: flex;
+}
+
+.dropdown-link {
+  font-size: 12px;
+  display: none;
+}
+
+.curation-category-liste-item {
+  font-size: 12px;
 }
 
 @media screen and (max-width: 991px) {

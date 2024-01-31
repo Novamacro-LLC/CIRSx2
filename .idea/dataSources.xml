@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://db-postgresql-nyc1-41364-do-user-6170808-0.db.ondigitalocean.com:25060/cirsx_dev</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="cirsx_prod" uuid="1721aa53-dfc7-45a1-b5ba-a3f50d396319">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://cirsx-prod-do-user-6170808-0.c.db.ondigitalocean.com:25060/cirsx_prod</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

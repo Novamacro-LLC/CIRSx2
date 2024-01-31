@@ -6,9 +6,6 @@
 
 
 
-
---Adding Event Types
-
  insert into cirsx_dev.public.account_country(country_name)
  values
 ('United States of America'),
@@ -208,12 +205,15 @@
 ('Zimbabwe');
 
 
---Adding Events
+
+--Adding Event Types
 
 insert into cirsx_dev.public.event_eventtype(event_type)
 values
 ('Conference'),
 ('Web Conference');
+
+--Adding Events
 
 insert into cirsx_dev.public.event_event(event_name,
                                          event_tag,
@@ -300,7 +300,6 @@ values
     ('Medical, Environmental and Patient',  'Medical, Environmental and Patient Audience Members'   ),
     ('Medical, Environmental and Legal',    'Medical, Environemntal and Legal Audience Members'     ),
     ('Environmental, Patient, and Legal',   'Environmental, Patient and Legal Audience Members'     );
-
 
 insert into cirsx_dev.public.event_eventattendance (attendance)
 values

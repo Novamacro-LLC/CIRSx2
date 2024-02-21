@@ -1,9 +1,9 @@
 import os
+import io
 import platform
 import urllib.request
 import pytesseract
 import llm
-import io
 from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 from tempfile import TemporaryDirectory
@@ -42,14 +42,16 @@ def run():
         doc_txt__isnull=True
     )
     image_file_list = []
-    if platform.system() == 'Windows':
-        pytesseract.pytesseract.tesseract_cmd = (
-            r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-        )
-        path_to_poppler_exe = Path(r'C:\Program Files\poppler-23.11.0\Library\bin')
     for d in docs:
         pdf_file = d.doc_path
         print(pdf_file)
+        if platform.system() == 'Windows':
+            pytesseract.pytesseract.tesseract_cmd = (
+                r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+            )
+            path_to_poppler_exe = Path(r'C:\Program Files\poppler-23.11.0\Library\bin')
+        else:
+            path_to_poppler_exe = Path('~')
         full_text = ''
         req = urllib.request.Request(pdf_file, headers={'User-Agent': 'Magic Browser'})
         file = urllib.request.urlopen(req).read()
@@ -64,14 +66,18 @@ def run():
                         pdf_file, 500, poppler_path=path_to_poppler_exe, last_page=75
                     )
                 else:
-                    pdf_pages = convert_from_path(pdf_file, 500, last_page=75)
+                    pdf_pages = convert_from_path(
+                        pdf_file, 500, poppler_path=path_to_poppler_exe, last_page=75
+                    )
             else:
                 if sys == 'Windows':
                     pdf_pages = convert_from_path(
                         pdf_file, 500, poppler_path=path_to_poppler_exe
                     )
                 else:
-                    pdf_pages = convert_from_path(pdf_file, 500)
+                    pdf_pages = convert_from_path(
+                        pdf_file, 500, poppler_path=path_to_poppler_exe
+                    )
             for page_enumeration, page in enumerate(pdf_pages, start=1):
                 filename = f'{tempdir}\page_{page_enumeration:03}.jpg'
                 page.save(filename, 'JPEG')

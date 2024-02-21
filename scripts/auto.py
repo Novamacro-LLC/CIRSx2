@@ -51,7 +51,7 @@ def run():
             )
             path_to_poppler_exe = Path(r'C:\Program Files\poppler-23.11.0\Library\bin')
         else:
-            path_to_poppler_exe = Path('/workspaces/.heroku/python/lin/python3.11/site-packages')
+            path_to_poppler_exe = Path(r"{'path'}\poppler-23.11.0\Library\bin")
         full_text = ''
         req = urllib.request.Request(pdf_file, headers={'User-Agent': 'Magic Browser'})
         file = urllib.request.urlopen(req).read()

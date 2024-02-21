@@ -1,3 +1,4 @@
+import os
 import platform
 import urllib.request
 import pytesseract
@@ -16,7 +17,7 @@ sys = platform.system()
 
 def chatgpt_init():
     model = llm.get_model('gpt-3.5-turbo')
-    model.key = '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'
+    model.key = os.environ.get('open_ai_key')
     conversation = model.conversation()
     return conversation
 

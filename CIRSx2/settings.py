@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #Created Apps
     'library',
     'public',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

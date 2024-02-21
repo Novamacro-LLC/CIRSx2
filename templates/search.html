@@ -1,0 +1,46 @@
+{% extends "base.html" %}{% load static %}
+{% block content %}
+    <div class="container text-center p-5">
+        <h1 class="display-3 p-2 fw-bold">CIRSX Search</h1>
+            <form method="GET">
+                {% if q == None %}
+                <input type="text" name="q">
+                {% else %}
+                <input type="text" name="q" value="{{ q }}">
+                {% endif %}
+                <button type="submit"> Search </button>
+            </form>
+    </div>
+
+    <div class="container p-4">
+            {% if docu == None %}
+                <h1>Please search for the subject you are looking for.</h1>
+            {% else %}
+                {% for d in docu %}
+                    <h3><a href="{{ d.doc_path }}">{{ d.title }}</a></h3>
+                    <p> {{ d.author }}</p>
+                    <p>{{ d.headline }}</p>
+                    <p> {{ d.pub_dt }} </p>
+                {% endfor %}
+            {% endif %}
+    </div>
+    <br>
+    <div>
+        {% if docs != None %}
+            {% if docs.has_previous %}
+                <a href="?q={{ q }} &page=1">&laquo First</a>
+                <a href="?q={{ q }} &page={{ docs.previous_page_number }}">Previous</a>
+
+            {% endif %}
+
+            {{ docs }}
+
+            {%  if docs.has_next %}
+                <a href="?q={{ q }} &page={{ docs.next_page_number }}">Next</a>
+                <a href="?q={{ q }} &page={{ docs.paginator.num_pages }}">Last &raquo</a>
+
+            {% endif %}
+        {% endif %}
+    </div>
+
+{% endblock content %}

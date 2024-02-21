@@ -17,7 +17,7 @@ sys = platform.system()
 
 def chatgpt_init():
     model = llm.get_model('gpt-3.5-turbo')
-    model.key = os.environ.get('open_ai_key')
+    model.key = os.environ('open_ai_key')
     conversation = model.conversation()
     return conversation
 

@@ -67,7 +67,7 @@ def run():
                     )
                 else:
                     pdf_pages = convert_from_path(
-                        pdf_file, 500, poppler_path=path_to_poppler_exe, last_page=75
+                        pdf_file, 500, last_page=75
                     )
             else:
                 if sys == 'Windows':
@@ -76,8 +76,7 @@ def run():
                     )
                 else:
                     pdf_pages = convert_from_path(
-                        pdf_file, 500, poppler_path=path_to_poppler_exe
-                    )
+                        pdf_file, 500)
             for page_enumeration, page in enumerate(pdf_pages, start=1):
                 filename = f'{tempdir}\page_{page_enumeration:03}.jpg'
                 page.save(filename, 'JPEG')

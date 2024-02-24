@@ -51,7 +51,7 @@ def run():
             )
             path_to_poppler_exe = Path(r'C:\Program Files\poppler-23.11.0\Library\bin')
         else:
-            path_to_poppler_exe = Path(r"{'path'}\poppler-23.11.0\Library\bin")
+            path_to_poppler_exe = Path('usr\share\poppler')
         full_text = ''
         req = urllib.request.Request(pdf_file, headers={'User-Agent': 'Magic Browser'})
         file = urllib.request.urlopen(req).read()
@@ -67,7 +67,7 @@ def run():
                     )
                 else:
                     pdf_pages = convert_from_path(
-                        pdf_file, 500, last_page=75
+                        pdf_file, 500, last_page=75, poppler_path=path_to_poppler_exe
                     )
             else:
                 if sys == 'Windows':
@@ -76,7 +76,7 @@ def run():
                     )
                 else:
                     pdf_pages = convert_from_path(
-                        pdf_file, 500)
+                        pdf_file, 500, poppler_path=path_to_poppler_exe)
             for page_enumeration, page in enumerate(pdf_pages, start=1):
                 filename = f'{tempdir}\page_{page_enumeration:03}.jpg'
                 page.save(filename, 'JPEG')

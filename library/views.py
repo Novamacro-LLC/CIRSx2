@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.db import connection
-from .models import Document, CurationCategory
+from .models import Document
+from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank, SearchHeadline
+from django.core.paginator import Paginator
 
 
 def curr_sql():
@@ -29,3 +31,29 @@ def curation(request):
     lst = curr_sql()
     context = {'lst': lst}
     return render(request, 'curation.html', context)
+
+
+def doc_search(request):
+    q = request.GET.get('q')
+
+    if q:
+        vector = SearchVector('title', 'author', 'keywords', 'doc_txt')
+        query = SearchQuery(q)
+        search_headline = SearchHeadline('doc_txt', query)
+
+        doc = Document.objects.annotate(
+            rank=SearchRank(vector, query),
+            headline=search_headline).filter(
+            rank__gte=0.001).order_by('-rank')
+        docu = doc.all()
+
+        p = Paginator(doc, 10)
+        page = request.GET.get('page')
+        docs = p.get_page(page)
+
+    else:
+        docs = None
+        docu = None
+
+    context = {'q': q, 'docs': docs, 'docu': docu}
+    return render(request, 'search.html', context)

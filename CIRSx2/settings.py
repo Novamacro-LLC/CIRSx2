@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'CIRSx2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  os.environ.get('dbName'),
-        'USER': os.environ.get('dbUser'),
-        'PASSWORD': os.environ.get('dbPassword'),
-        'HOST': os.environ.get('dbHost'),
-        'PORT': os.environ.get('dbPort')
+        'NAME': 'cirsx_dev' ,#os.environ.get('dbName'),
+        'USER': 'doadmin' ,#os.environ.get('dbUser'),
+        'PASSWORD': 'ydi1v6xzjfadvs6m',#os.environ.get('dbPassword'),
+        'HOST': 'db-postgresql-nyc1-41364-do-user-6170808-0.db.ondigitalocean.com', #os.environ.get('dbHost'),
+        'PORT': '25060' #os.environ.get('dbPort')
     }
 }
 

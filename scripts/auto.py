@@ -5,7 +5,7 @@ import urllib.request
 import pytesseract
 import llm
 from PyPDF2 import PdfReader
-from pdf2image import convert_from_path
+from pdf2image import convert_from_pathredesign
 from tempfile import TemporaryDirectory
 from pathlib import Path
 from PIL import Image
@@ -17,7 +17,7 @@ sys = platform.system()
 
 def chatgpt_init():
     model = llm.get_model('gpt-3.5-turbo')
-    model.key = os.environ('open_ai_key')
+    model.key = os.environ.get('open_ai_key')
     conversation = model.conversation()
     return conversation
 

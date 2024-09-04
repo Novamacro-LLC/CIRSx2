@@ -51,7 +51,7 @@ def run():
             )
             path_to_poppler_exe = Path(r'D:\Users\bdavison\poppler-24.07.0\Library\bin')
         else:
-            path_to_poppler_exe = Path('usr\share\poppler')
+            path_to_poppler_exe = Path(r'usr\share\poppler')
         full_text = ''
         req = urllib.request.Request(pdf_file, headers={'User-Agent': 'Magic Browser'})
         file = urllib.request.urlopen(req).read()
@@ -96,6 +96,6 @@ def run():
             d.doc_txt = full_text
             d.author = author(sample)
             print(author(sample))
-            d.pub_dt = pub_date(sample).date
-            print(pub_date(sample).date)
+            d.pub_dt = pub_date(sample)
+            print(pub_date(sample))
             d.save()

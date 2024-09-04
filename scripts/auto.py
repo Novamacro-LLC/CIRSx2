@@ -31,7 +31,7 @@ def author(text):
 
 def pub_date(text):
     output = chatgpt_init()
-    chat = 'Please provide me a publication date of this text.' + text + 'Please provide the response only in the YYYY-MM-DD date format.  If no day is provided please set to 01.'
+    chat = 'Please provide me a publication date of this text.' + text + 'Please provide a json response for the date in the YYYY-MM-DD date format.  If no day is provided please set to 01.'
     pub_dt = output.prompt(chat)
     return pub_dt.text()
 
@@ -96,6 +96,6 @@ def run():
             d.doc_txt = full_text
             d.author = author(sample)
             print(author(sample))
-            d.pub_dt = pub_date(sample)
-            print(pub_date(sample))
+            d.pub_dt = pub_date(sample).date
+            print(pub_date(sample).date)
             d.save()

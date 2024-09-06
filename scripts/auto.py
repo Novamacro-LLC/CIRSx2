@@ -31,7 +31,7 @@ def author(text):
 
 def pub_date(text):
     output = chatgpt_init()
-    chat = 'Please provide me a publication date of this text.' + text + 'Please provide the response only in the YYYY-MM-DD date format.  If no day is provided please set to 01.'
+    chat = 'Please provide me a publication date of this text.' + text + 'Please provide a json response for the date in the YYYY-MM-DD date format.  If no day is provided please set to 01.'
     pub_dt = output.prompt(chat)
     return pub_dt.text()
 
@@ -51,7 +51,7 @@ def run():
             )
             path_to_poppler_exe = Path(r'D:\Users\bdavison\poppler-24.07.0\Library\bin')
         else:
-            path_to_poppler_exe = Path('usr\share\poppler')
+            path_to_poppler_exe = Path(r'usr\share\poppler')
         full_text = ''
         req = urllib.request.Request(pdf_file, headers={'User-Agent': 'Magic Browser'})
         file = urllib.request.urlopen(req).read()

@@ -8,6 +8,7 @@
       <jdbc-url>jdbc:postgresql://db-postgresql-nyc1-41364-do-user-6170808-0.db.ondigitalocean.com:25060/cirsx_dev</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+
     <data-source source="LOCAL" name="cirsx_prod" uuid="65a22282-cd81-47fb-88b5-e45b35d725d9">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>

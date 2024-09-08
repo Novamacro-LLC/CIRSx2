@@ -5,5 +5,4 @@ urlpatterns = [
     path('reference_papers/', views.reference_papers, name='reference_papers'),
     path('bibliographies/', views.bibliographies, name='bibliographies'),
     path('curation/', views.curation, name='curation'),
-    path('search/', views.doc_search, name='search'),
 ]

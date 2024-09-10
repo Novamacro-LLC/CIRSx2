@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="accountSettings">
-    <option name="activeProfile" value="profile:730335556123_AdministratorAccess" />
     <option name="activeRegion" value="us-east-1" />
     <option name="recentlyUsedProfiles">
       <list>
+        <option value="profile:d-9067e76204-730335556123-AdministratorAccess" />
+        <option value="profile:d-9067e76204-381492044393-AdministratorAccess" />
         <option value="profile:730335556123_AdministratorAccess" />
       </list>
     </option>
@@ -14,7 +15,10 @@
       </list>
     </option>
   </component>
+  <component name="connectionManager">
+    <option name="activeConnectionId" value="AwsConnectionManagerConnection" />
+  </component>
   <component name="explorerToolWindow">
-    <option name="selectedTab" value="Explorer" />
+    <option name="selectedTab" value="CodeCatalyst" />
   </component>
 </project>

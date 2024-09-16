@@ -10,13 +10,11 @@ def curr_sql():
         columns = [col[0] for col in cursor.description]
         return [dict(zip(columns, row)) for row in cursor.fetchall()]
 
-
 def reference_papers(request):
     title = 'Reference Papers'
     rsch = Document.objects.filter(doctyp_num=2).order_by('title')
     context = {'rsch': rsch, 'title': title}
     return render(request, 'reference_papers.html', context)
-
 
 def bibliographies(request):
     title = 'Bibliographies'
@@ -24,8 +22,13 @@ def bibliographies(request):
     context = {'bib': bib, 'title': title}
     return render(request, 'bibliographies.html', context)
 
-
 def curation(request):
     lst = curr_sql()
     context = {'lst': lst}
     return render(request, 'curation.html', context)
+
+def healers(request):
+    title = 'Healers and Helpers'
+    heal = Document.objects.filter(doctyp_num=3).order_by('title')
+    context = {'heal': heal, 'title': title}
+    return render(request, 'healers-helpers.html', context)

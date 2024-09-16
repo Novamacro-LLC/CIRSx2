@@ -66,3 +66,10 @@ class Document(models.Model):
 
     def __str__(self):
         return self.title
+
+class HealersHelpers(models.Model):
+    name = models.CharField(max_length=100)
+    doc_num = models.ForeignKey(Document, null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.name

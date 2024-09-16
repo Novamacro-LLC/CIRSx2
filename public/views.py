@@ -36,3 +36,15 @@ def healers(request):
     # Add to db and CTA
     context = {'title': title}
     return render(request, 'healers-helpers.html', context)
+
+def research_lab(request):
+    title = 'Research Lab'
+    # Add to db and CTA
+    context = {'title': title}
+    return render(request, 'research-lab.html', context)
+
+def shoey_awards(request):
+    title = 'Shoey Awards'
+    # Add to db and CTA
+    context = {'title': title}
+    return render(request, 'shoey-awards.html', context)

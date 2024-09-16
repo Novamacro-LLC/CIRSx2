@@ -7,11 +7,12 @@ from . import views
 urlpatterns = [
     path('', views.home, name='index'),
     path('about/', views.about, name='about' ),
-    path('book_of_the_year/', views.boty, name='boty'),
+    path('book-of-the-year/', views.boty, name='book-of-the-year'),
     path('conference/', views.conference, name='conference'),
-    path('institute/', views.institute, name='institute'),
+    path('cirsx-institute/', views.institute, name='cirsx-institute'),
     path('research-lab/', views.research_lab, name='research-lab'),
-    path('shoey-awards/', views.shoey_awards, name='shoey-awards')
+    path('shoey-awards/', views.shoey_awards, name='shoey-awards'),
+    path('patient-resources/', views.patient_resources, name='patient-resources')
 ]
 
 

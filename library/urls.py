@@ -2,8 +2,9 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('reference_papers/', views.reference_papers, name='reference_papers'),
+    path('resource-library/', views.resource_library, name='resource-library'),
     path('bibliographies/', views.bibliographies, name='bibliographies'),
     path('curation/', views.curation, name='curation'),
-    path('healers-helpers/', views.healers, name='healers-helpers')
+    path('healers-helpers/', views.healers, name='healers-helpers'),
+    path('video-library/', views.video_library, name='video-library')
 ]

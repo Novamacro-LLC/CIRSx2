@@ -48,3 +48,9 @@ def shoey_awards(request):
     # Add to db and CTA
     context = {'title': title}
     return render(request, 'shoey-awards.html', context)
+
+def patient_resources(request):
+    title = 'Patient Resources'
+    # Add to db and CTA
+    context = {'title': title}
+    return render(request, 'patient-resources.html', context)

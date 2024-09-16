@@ -29,7 +29,7 @@
       <div class="w-layout-blockcontainer container no-margin navbar-full w-container">
         <div class="navbar-wrapper">
           <div class="nav-left">
-            <a href="index.html" aria-current="page" class="brand w-nav-brand w--current"><img src={% static 'images/cirsx--coloro-logo.svg' %} loading="lazy" alt="B-Well" class="image"></a>
+            <a href={% url 'index' %} aria-current="page" class="brand w-nav-brand w--current"><img src={% static 'images/cirsx--coloro-logo.svg' %} loading="lazy" alt="B-Well" class="image"></a>
           </div>
           <div class="nav-right">
             <div class="nav-menu-wrap">
@@ -40,32 +40,32 @@
                   </div>
                   <nav class="link-list w-dropdown-list">
                     <div class="nav-links">
-                      <a href="video-library.html" class="w-dropdown-link">Video Archives</a>
-                      <a href="resource-library.html" class="w-dropdown-link">Resource Library</a>
-                      <a href="patient-resources.html" class="w-dropdown-link">Patient Help</a>
-                      <a href="bibliographies.html" class="w-dropdown-link">Bibliographies</a>
+                      <a href={% url 'video-library'%} class="w-dropdown-link">Video Archives</a>
+                      <a href={% url 'resource-library' %} class="w-dropdown-link">Resource Library</a>
+                      <a href={% url 'patient-resources'%} class="w-dropdown-link">Patient Help</a>
+                      <a href={% url 'bibliographies'%} class="w-dropdown-link">Bibliographies</a>
                     </div>
                   </nav>
                 </div>
-                <a href="research-lab.html" class="nav-link">Research Lab</a>
-                <a href="cirsx-institute.html" class="nav-link">CIRSx Institute</a>
-                <a href="conference.html" class="nav-btn mobile">Contact Us</a>
+                <a href={% url 'research-lab'%} class="nav-link">Research Lab</a>
+                <a href={% url 'cirsx-institute' %} class="nav-link">CIRSx Institute</a>
+                <a href={% url 'conference'%} class="nav-btn mobile">Contact Us</a>
                 <div data-delay="0" data-hover="false" data-w-id="c80d4470-4c43-59fb-20d9-1a210016a343" class="nav-drop-down w-dropdown">
                   <div class="dropdown-toggle w-dropdown-toggle">
                     <div>More</div><img loading="lazy" src={% static 'images/ic-arrow-down.svg'%} alt="Icon" class="arrow">
                   </div>
                   <nav class="link-list w-dropdown-list">
                     <div class="nav-links">
-                      <a href="about.html" class="w-dropdown-link">About Us</a>
-                      <a href="healers-helpers.html" class="w-dropdown-link">Interviews</a>
-                      <a href="shoey-awards.html" class="w-dropdown-link">Shoey Awards</a>
-                      <a href="book-of-the-year.html" class="w-dropdown-link">Book of the Year</a>
+                      <a href={% url 'about' %} class="w-dropdown-link">About Us</a>
+                      <a href={% url 'healers-helpers'%} class="w-dropdown-link">Interviews</a>
+                      <a href={% url 'shoey-awards'%} class="w-dropdown-link">Shoey Awards</a>
+                      <a href={% url 'book-of-the-year'%} class="w-dropdown-link">Book of the Year</a>
                     </div>
                   </nav>
                 </div>
               </nav>
             </div>
-            <a href="conference.html" class="nav-btn">Conference Registration</a>
+            <a href={% url 'conference'%} class="nav-btn">Conference Registration</a>
             <div class="humburg-menu w-nav-button">
               <div class="top-line"></div>
               <div class="middle-line"></div>

@@ -1766,5 +1766,28 @@ values
     ('3', '1', 'https://vimeo.com/899380461', 'Jenny Johnson'),
     ('3', '1', 'https://vimeo.com/899369690', 'Dr. Jodie Dashore'),
     ('3', '1', 'https://vimeo.com/899379322', 'Dr. Jackie Meinhardt'),
-    ('3', '1', 'https://vimeo.com/900284691', 'John Banta')
+    ('3', '1', 'https://vimeo.com/900284691', 'John Banta');
 
+insert into cirsx_dev.public.library_healershelers(name, doc_num_id, vid_order)
+    values
+    ('Dr. Richie Shoemaker', '','1'),
+    ('Dr. Scott McMahon', '', '2'),
+    ('Dr. Eric Dorninger', '','3'),
+    ('Dr. James Ryan', '','4'),
+    ('Deborah Waidner', '', '5'),
+    ('Sally Shoemaker', '', '6'),
+    ('Denis Katz and Michael Macione - Hopkinton Pharmacy', '', '7'),
+    ('Gianni Rossini', '', '8'),
+    ('Dr. Joe Musto', '', '9'),
+    ('Robert McKee, JD', '', '10'),
+    ('Dr. Drew Heyman', '', '11'),
+    ('Jenny Johnson', '', '12'),
+    ('Dr. Jodie Dashore', '', '13'),
+    ('Dr. Jackie Meinhardt', '', '14'),
+    ('John Banta', '', '15');
+
+insert into cirsx_dev.public.public_boty (title, author, year)
+    values
+        ('The Art and Science of CIRS Medicine', 'Richie Shoemaker, MD; Scott McMahon, MD; Andrew Heyman, MD',  '2021'),
+        ('Perscription for a Healthy House', 'Paula Baker LaPorte; John Banta', '2022'),
+        ('Nutrition and Integrative Medicine for Clinicians', 'Aruna Bakhr; April Vukelic','2023');

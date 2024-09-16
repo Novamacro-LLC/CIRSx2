@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.db import connection
-from .models import Document, CurationCategory
+from .models import Document, CurationCategory, HealersHelpers
 
 
 def curr_sql():
@@ -29,6 +29,6 @@ def curation(request):
 
 def healers(request):
     title = 'Healers and Helpers'
-    heal = Document.objects.filter(doctyp_num=3).order_by('title')
+    heal = HealersHelpers.objects.order_by('vid_order')
     context = {'heal': heal, 'title': title}
     return render(request, 'healers-helpers.html', context)

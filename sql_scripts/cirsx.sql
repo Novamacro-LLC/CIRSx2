@@ -2,7 +2,7 @@
  This is the CIRSx data ingestion sql that will be run after the implementation
 
  Adding Countries
- */
+
 
 
 
@@ -1749,3 +1749,22 @@ values
     ('6','1','https://vimeo.com/showcase/10789440','Gastroenterology'                                               ),
     ('6','1','https://vimeo.com/showcase/10789441','Interviews / Podcasts'                                          ),
     ('6','1','https://vimeo.com/showcase/10789443','Healthcare Panels'                                              );
+*/
+insert into cirsx_dev.public.library_document(doctyp_num_id, aud_num_id, doc_path, title)
+values
+    ('3', '1', 'https://vimeo.com/899352346', 'Dr. Richie Shoemaker'),
+    ('3', '1', 'https://vimeo.com/899351353', 'Dr. Scott McMahon'),
+    ('3', '1', 'https://vimeo.com/899350310', 'Dr. Eric Dorninger'),
+    ('3', '1', 'https://vimeo.com/899349023', 'Dr. James Ryan'),
+    ('3', '1', 'https://vimeo.com/899372152', 'Deborah Waidner'),
+    ('3', '1', 'https://vimeo.com/899367862', 'Sally Shoemaker'),
+    ('3', '1', 'https://vimeo.com/726476242', 'Denis Katz and Michael Macione - Hopkinton Pharmacy'),
+    ('3', '1', 'https://vimeo.com/899366836', 'Gianni Rossini'),
+    ('3', '1', 'https://vimeo.com/899951463', 'Dr. Joe Musto'),
+    ('3', '1', 'https://vimeo.com/899938270', 'Robert McKee, JD'),
+    ('3', '1', 'https://vimeo.com/899358335', 'Dr. Drew Heyman'),
+    ('3', '1', 'https://vimeo.com/899380461', 'Jenny Johnson'),
+    ('3', '1', 'https://vimeo.com/899369690', 'Dr. Jodie Dashore'),
+    ('3', '1', 'https://vimeo.com/899379322', 'Dr. Jackie Meinhardt'),
+    ('3', '1', 'https://vimeo.com/900284691', 'John Banta')
+

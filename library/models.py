@@ -70,6 +70,7 @@ class Document(models.Model):
 class HealersHelpers(models.Model):
     name = models.CharField(max_length=100)
     doc_num = models.ForeignKey(Document, null=True, on_delete=models.SET_NULL)
+    vid_order = models.IntegerField(null=True, unique=True)
 
     def __str__(self):
         return self.name

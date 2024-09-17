@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import BOTY
 
 
 def home(request):
@@ -15,8 +16,9 @@ def about(request):
 
 def boty(request):
     title = 'Book of the Year'
-    # Add to db and CTA
-    context = {'title': title}
+    boy = BOTY.objects.all().order_by('year')
+    # Add CTA
+    context = {'title': title, 'boy': boy}
     return render(request, 'book-of-the-year.html', context)
 
 def institute(request):

@@ -1750,7 +1750,7 @@ values
     ('6','1','https://vimeo.com/showcase/10789441','Interviews / Podcasts'                                          ),
     ('6','1','https://vimeo.com/showcase/10789443','Healthcare Panels'                                              );
 */
-insert into cirsx_dev.public.library_document(doctyp_num_id, aud_num_id, doc_path, title)
+insert into cirsx_prod.public.library_document(doctyp_num_id, aud_num_id, doc_path, title)
 values
     ('3', '1', 'https://vimeo.com/899352346', 'Dr. Richie Shoemaker'),
     ('3', '1', 'https://vimeo.com/899351353', 'Dr. Scott McMahon'),
@@ -1768,26 +1768,26 @@ values
     ('3', '1', 'https://vimeo.com/899379322', 'Dr. Jackie Meinhardt'),
     ('3', '1', 'https://vimeo.com/900284691', 'John Banta');
 
-insert into cirsx_dev.public.library_healershelers(name, doc_num_id, vid_order)
+insert into cirsx_prod.public.library_healershelpers(name, doc_num_id, vid_order)
     values
-    ('Dr. Richie Shoemaker', '','1'),
-    ('Dr. Scott McMahon', '', '2'),
-    ('Dr. Eric Dorninger', '','3'),
-    ('Dr. James Ryan', '','4'),
-    ('Deborah Waidner', '', '5'),
-    ('Sally Shoemaker', '', '6'),
-    ('Denis Katz and Michael Macione - Hopkinton Pharmacy', '', '7'),
-    ('Gianni Rossini', '', '8'),
-    ('Dr. Joe Musto', '', '9'),
-    ('Robert McKee, JD', '', '10'),
-    ('Dr. Drew Heyman', '', '11'),
-    ('Jenny Johnson', '', '12'),
-    ('Dr. Jodie Dashore', '', '13'),
-    ('Dr. Jackie Meinhardt', '', '14'),
-    ('John Banta', '', '15');
+    ('Dr. Richie Shoemaker', '1428','1'),
+    ('Dr. Scott McMahon', '1429', '2'),
+    ('Dr. Eric Dorninger', '1430','3'),
+    ('Dr. James Ryan', '1431','4'),
+    ('Deborah Waidner', '1432', '5'),
+    ('Sally Shoemaker', '1433', '6'),
+    ('Denis Katz and Michael Macione - Hopkinton Pharmacy', '1434', '7'),
+    ('Gianni Rossini', '1435', '8'),
+    ('Dr. Joe Musto', '1436', '9'),
+    ('Robert McKee, JD', '1437', '10'),
+    ('Dr. Drew Heyman', '1438', '11'),
+    ('Jenny Johnson', '1439', '12'),
+    ('Dr. Jodie Dashore', '1440', '13'),
+    ('Dr. Jackie Meinhardt', '1441', '14'),
+    ('John Banta', '1442', '15');
 
-insert into cirsx_dev.public.public_boty (title, author, year)
+insert into cirsx_prod.public.public_boty (title, author, year)
     values
         ('The Art and Science of CIRS Medicine', 'Richie Shoemaker, MD; Scott McMahon, MD; Andrew Heyman, MD',  '2021'),
-        ('Perscription for a Healthy House', 'Paula Baker LaPorte; John Banta', '2022'),
+        ('Prescription for a Healthy House', 'Paula Baker LaPorte; John Banta', '2022'),
         ('Nutrition and Integrative Medicine for Clinicians', 'Aruna Bakhr; April Vukelic','2023');

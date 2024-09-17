@@ -1,4 +1,4 @@
-{% extends 'base.html' %}{% load static   %}{% block content %}
+{% extends 'base.html' %}{% load static %}{% block content %}
       <div class="sub-title"><img src={% static 'images/sub-title.svg' %} loading="lazy" width="22" alt="Icon">
         <div class="text-block-17">Authoring Innovations in Medicine</div>
       </div>
@@ -7,57 +7,18 @@
     <section class="interviews shoey-awards">
       <div class="w-layout-blockcontainer container w-container">
         <div class="award-container">
-          <div class="award">
-            <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="Post Image" class="post-image"></div>
+          {% for b in boy %}
+            <div class="award">
+            <div class="post-img"><img src={% static b.image %} loading="lazy" alt="Post Image" class="post-image"></div>
             <div class="post-data">
               <div>
-                <h4 class="post-title">Item Title</h4>
+                <h4 class="post-title">{{ b.title }}</h4>
               </div>
             </div>
           </div>
-          <div class="award">
-            <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="Post Image" class="post-image"></div>
-            <div class="post-data">
-              <div>
-                <h4 class="post-title">Item Title</h4>
-              </div>
-            </div>
-          </div>
-          <div class="award">
-            <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="Post Image" class="post-image"></div>
-            <div class="post-data">
-              <div>
-                <h4 class="post-title">Item Title</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="award-container">
-          <div class="award">
-            <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="Post Image" class="post-image"></div>
-            <div class="post-data">
-              <div>
-                <h4 class="post-title">Item Title</h4>
-              </div>
-            </div>
-          </div>
-          <div class="award">
-            <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="Post Image" class="post-image"></div>
-            <div class="post-data">
-              <div>
-                <h4 class="post-title">Item Title</h4>
-              </div>
-            </div>
-          </div>
-          <div class="award">
-            <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="Post Image" class="post-image"></div>
-            <div class="post-data">
-              <div>
-                <h4 class="post-title">Item Title</h4>
-              </div>
-            </div>
-          </div>
+          {% endfor %}  
         </div>
       </div>
     </section>
+  </div>
 {% endblock content %}

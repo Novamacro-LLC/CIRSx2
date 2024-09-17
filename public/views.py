@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import BOTY
+from .models import BOTY, ShoeyAwards
 
 
 def home(request):
@@ -47,8 +47,9 @@ def research_lab(request):
 
 def shoey_awards(request):
     title = 'Shoey Awards'
-    # Add to db and CTA
-    context = {'title': title}
+    award = ShoeyAwards.objects.all()
+    # Add CTA
+    context = {'title': title, 'award':award}
     return render(request, 'shoey-awards.html', context)
 
 def patient_resources(request):

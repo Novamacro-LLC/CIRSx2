@@ -3,7 +3,8 @@ from django.db import models
 class ShoeyAwards(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField(upload_to='shoey_awards')
+    year = models.IntegerField(null=False, default=0)
+    image = models.CharField(max_length=100, null=False, default='Shoey Award')
 
     def __str__(self):
         return self.name

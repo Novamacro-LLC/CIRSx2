@@ -1786,8 +1786,17 @@ insert into cirsx_prod.public.library_healershelpers(name, doc_num_id, vid_order
     ('Dr. Jackie Meinhardt', '1441', '14'),
     ('John Banta', '1442', '15');
 
-insert into cirsx_prod.public.public_boty (title, author, year)
+insert into cirsx_prod.public.public_boty (title, author, year, images)
     values
-        ('The Art and Science of CIRS Medicine', 'Richie Shoemaker, MD; Scott McMahon, MD; Andrew Heyman, MD',  '2021'),
-        ('Prescription for a Healthy House', 'Paula Baker LaPorte; John Banta', '2022'),
-        ('Nutrition and Integrative Medicine for Clinicians', 'Aruna Bakhr; April Vukelic','2023');
+        ('The Art and Science of CIRS Medicine', 'Richie Shoemaker, MD; Scott McMahon, MD; Andrew Heyman, MD',  '2021','images/2021-Book-of-the-Year.jpg'),
+        ('Prescription for a Healthy House', 'Paula Baker LaPorte; John Banta', '2022', 'images/2022-Book-of-the-Year.jpg'),
+        ('Nutrition and Integrative Medicine for Clinicians', 'Aruna Bakhr; April Vukelic','2023', 'images/2023-Book-of-the-Year.jpg');
+
+insert into cirsx_dev.public.public_shoeyawards (name, description, year, image)
+    values
+        ('Christian Navarro Torres','ACCLAIM Award', '2024', 'images/'),
+        ('Chris Foth', 'ANGELS Award', '2024', 'images/'),
+        ('David Lark', 'BUILD Award', '2024', 'images/'),
+        ('Michael Schrantz', 'EDUCATE Award', '2024', 'images/'),
+        ('Scott McMahon', 'HEROES Award', '2024', 'images/'),
+        ('Kristina Baehr', 'JUSTICE Award', '2024', 'images/');

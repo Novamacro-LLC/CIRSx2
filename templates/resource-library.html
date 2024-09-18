@@ -145,46 +145,18 @@
     <section class="interviews">
       <div class="w-layout-blockcontainer container w-container">
         <div class="research-wrapper">
+        {% for r in rsch %}
           <div class="research-card">
             <div class="research-title">
-              <h4 class="heading-4">Paper Title</h4>
+              <h4 class="heading-4">{{ r.title}}</h4>
             </div>
             <div>
-              <a href="#" class="w-inline-block">
+              <a href={{ r.doc_path }} class="w-inline-block">
                 <div class="text-block-22">Read</div>
               </a>
             </div>
           </div>
-          <div class="research-card">
-            <div class="research-title">
-              <h4 class="heading-4">Paper Title</h4>
-            </div>
-            <div>
-              <a href="#" class="w-inline-block">
-                <div>Read</div>
-              </a>
-            </div>
-          </div>
-          <div class="research-card">
-            <div class="research-title">
-              <h4 class="heading-4">Paper Title</h4>
-            </div>
-            <div>
-              <a href="#" class="w-inline-block">
-                <div>Read</div>
-              </a>
-            </div>
-          </div>
-          <div class="research-card">
-            <div class="research-title">
-              <h4 class="heading-4">Paper Title</h4>
-            </div>
-            <div>
-              <a href="#" class="w-inline-block">
-                <div>Read</div>
-              </a>
-            </div>
-          </div>
+        {% endfor %}
         </div>
       </div>
     </section>

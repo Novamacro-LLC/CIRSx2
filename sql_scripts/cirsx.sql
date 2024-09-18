@@ -1792,7 +1792,7 @@ insert into cirsx_prod.public.public_boty (title, author, year, images)
         ('Prescription for a Healthy House', 'Paula Baker LaPorte; John Banta', '2022', 'images/2022-Book-of-the-Year.jpg'),
         ('Nutrition and Integrative Medicine for Clinicians', 'Aruna Bakhr; April Vukelic','2023', 'images/2023-Book-of-the-Year.jpg');
 
-insert into cirsx_dev.public.public_shoeyawards (name, description, year, image)
+insert into cirsx_prod.public.public_shoeyawards (name, description, year, image)
     values
         ('Christian Navarro Torres','ACCLAIM Award', '2024', 'images/Acclaim-2024-Torres.png'),
         ('Chris Foth', 'ANGELS Award', '2024', 'images/Angels-2024-Foth.png'),

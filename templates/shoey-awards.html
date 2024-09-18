@@ -4,8 +4,8 @@
       <div class="sub-title"><img src={% static 'images/sub-title.svg'%} loading="lazy" alt="Icon">
         <div class="text-block-17">Shoey Awards</div>
       </div>
-      <h1 class="about-main-title">2024 Shoey Awards</h1>
     </div>
+    <h1 class="about-main-title">2024 Shoey Awards</h1>   
   </div>
   <div class="page-data">
     <section class="interviews shoey-awards">
@@ -13,10 +13,10 @@
           <div class="award-container">
           {% for a in award %}
             <div class="award">
-            <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="Post Image" class="post-image"></div>
+            <div class="post-img"><img src={% static a.image %} loading="lazy" alt="Post Image" class="post-image"></div>
             <div class="post-data">
               <div>
-                <h4 class="post-title">Item Title</h4>
+                <h4 class="post-title">{{ a.name }} - {{ a.description }} </h4>
               </div>
             </div>
           </div>

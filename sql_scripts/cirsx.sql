@@ -1794,9 +1794,9 @@ insert into cirsx_prod.public.public_boty (title, author, year, images)
 
 insert into cirsx_dev.public.public_shoeyawards (name, description, year, image)
     values
-        ('Christian Navarro Torres','ACCLAIM Award', '2024', 'images/'),
-        ('Chris Foth', 'ANGELS Award', '2024', 'images/'),
-        ('David Lark', 'BUILD Award', '2024', 'images/'),
-        ('Michael Schrantz', 'EDUCATE Award', '2024', 'images/'),
-        ('Scott McMahon', 'HEROES Award', '2024', 'images/'),
-        ('Kristina Baehr', 'JUSTICE Award', '2024', 'images/');
+        ('Christian Navarro Torres','ACCLAIM Award', '2024', 'images/Acclaim-2024-Torres.png'),
+        ('Chris Foth', 'ANGELS Award', '2024', 'images/Angels-2024-Foth.png'),
+        ('David Lark', 'BUILD Award', '2024', 'images/Build-2024-Lark.png'),
+        ('Michael Schrantz', 'EDUCATE Award', '2024', 'images/Educate-2024-Schrantz.png'),
+        ('Scott McMahon', 'HEROES Award', '2024', 'images/Heroes-2024-McMahon.png'),
+        ('Kristina Baehr', 'JUSTICE Award', '2024', 'images/Justice-2024-Baehr.png');

@@ -10,7 +10,24 @@
   <div class="page-data">
     <section class="interviews shoey-awards">
       <div class="w-layout-blockcontainer container w-container">
-          <div class="award-container">
+        <div class="award-container">
+          {% for a in award %}
+            <div class="award">
+            <div class="post-img"><img src={% static a.image %} loading="lazy" alt="Post Image" class="post-image"></div>
+            <div class="post-data">
+              <div>
+                <h4 class="post-title">{{ a.name }} - {{ a.description }}</h4>
+              </div>
+            </div>
+          </div>
+          {% endfor %}  
+        </div>
+      </div>
+    </section>
+<!--
+      <section class="interviews shoey-awards">
+      <div class="w-layout-blockcontainer container w-container">
+          <div class="shoey-award-container">
           {% for a in award %}
             <div class="award">
             <div class="post-img"><img src={% static a.image %} loading="lazy" alt="Post Image" class="post-image"></div>
@@ -24,5 +41,6 @@
         </div>
       </div>
     </section>
+    -->
   </div>
 {% endblock %}

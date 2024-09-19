@@ -9,46 +9,26 @@
   </div>
   <div class="page-data">
     <section class="interviews">
-      <div class="w-layout-blockcontainer container content-grid w-container">
+      <div class="container content-grid">
+        {% for h in heal %}
         <a data-w-id="fdee9fdb-7f47-1b5a-deea-6110a8c6dd67" href="#" class="post-link w-inline-block">
-          <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Post Image" class="post-image"></div>
+          <div class="post-img">
+              <div style="padding:56.25% 0 0 0;position:relative;">
+                  <iframe src={{ h.path }}></iframe>
+              </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
           <div class="post-data">
             <div>
-              <h4 class="post-title">Item Title</h4>
-              <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
+              <h4 class="post-title">{{ h.name }}</h4>
             </div>
             <div class="post-date">
               <div class="post-category">Category</div>
               <div>7/5/2024</div>
             </div>
-          </div>
-        </a>
-        <a data-w-id="2df3b53a-91d0-885a-7139-d00a8cdcb8bc" href="#" class="post-link w-inline-block">
-          <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-              <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
-            </div>
-            <div class="post-date">
-              <div class="post-category">Category</div>
-              <div>7/5/2024</div>
             </div>
           </div>
         </a>
-        <a data-w-id="62d57fa4-2aef-5544-cf65-e6e4738e26c8" href="#" class="post-link w-inline-block">
-          <div class="post-img"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-              <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
-            </div>
-            <div class="post-date">
-              <div class="post-category">Category</div>
-              <div>7/5/2024</div>
-            </div>
-          </div>
-        </a>
+        {% endfor %}
       </div>
     </section>
   </div>

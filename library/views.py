@@ -27,14 +27,22 @@ def curation(request):
     context = {'lst': lst}
     return render(request, 'curation.html', context)
 
-def healers(request):
-    title = 'Healers and Helpers'
-    heal = HealersHelpers.objects.order_by('vid_order')
-    context = {'heal': heal, 'title': title}
-    return render(request, 'healers-helpers.html', context)
-
 def video_library(request):
     title = 'Video Library'
     vid = Document.objects.filter(doctyp_num=3).order_by('title')
     context = {'title': title, 'vid': vid}
     return render(request, 'video-library.html', context)
+
+def healers(request):
+    title = 'Healers and Helpers'
+    # Add CTA
+    help = HealersHelpers.objects.all()
+    heal = []
+    for h in help:
+        name = h.name
+        doc = Document.objects.filter(id=h.doc_num_id).first()
+        link = doc.doc_path.split('/')
+        path = 'https://player.vimeo.com/video/'+ link[3] +'?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:60%;height:60%;" title=' + name
+        heal.append({'name': name, 'path': path})
+    context = {'title': title,  'heal': heal}
+    return render(request, 'healers-helpers.html', context)

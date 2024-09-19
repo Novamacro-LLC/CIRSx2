@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from library.models import Document
 from .models import BOTY, ShoeyAwards
 
 
@@ -32,12 +33,6 @@ def conference(request):
     # Add details to db and CTA
     context = {'title': title}
     return render(request, 'conference.html', context)
-
-def healers(request):
-    title = 'Healers and Helpers'
-    # Add to db and CTA
-    context = {'title': title}
-    return render(request, 'healers-helpers.html', context)
 
 def research_lab(request):
     title = 'Research Lab'

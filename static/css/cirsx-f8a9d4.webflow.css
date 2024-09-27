@@ -362,7 +362,9 @@ blockquote {
   clear: both;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  flex-flow: column;
+  aspect-ratio: auto;
+  flex-flow: wrap;
+  flex: 0 auto;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
@@ -374,6 +376,8 @@ blockquote {
   margin-right: auto;
   padding: 0;
   display: flex;
+  position: static;
+  overflow: visible;
 }
 
 .container.no-margin.navbar-full {
@@ -2939,6 +2943,7 @@ blockquote {
   border-radius: 10px;
   flex-flow: column;
   justify-content: space-around;
+  align-self: flex-end;
   align-items: flex-start;
   width: 100%;
   height: 100%;
@@ -3736,14 +3741,22 @@ blockquote {
 }
 
 .award-container {
+  clear: none;
   grid-column-gap: 34px;
   grid-row-gap: 34px;
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: stretch;
   margin-top: 16px;
   display: flex;
+  position: static;
 }
 
 .award {
+  clear: both;
   width: 33.33%;
+  display: block;
+  position: static;
 }
 
 .award.w33 {

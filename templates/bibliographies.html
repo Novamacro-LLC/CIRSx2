@@ -8,7 +8,7 @@
       <h1 class="main-title">Bibliographies</h1>
     </div>
   </div>
-  <div class="page-data">
+  <!--<div class="page-data">
     <section class="research-options">
       <section class="research-options">
         <div class="w-layout-blockcontainer container w-container">
@@ -144,11 +144,12 @@
     }
     document.addEventListener('click', hideDropdown);
 </script>
-            </body></div>
+            </body>
+            </div>
           </div>
         </div>
       </section>
-    </section>
+    </section>-->
     <section class="interviews">
       <div class="w-layout-blockcontainer container w-container">
         <div class="research-wrapper">
@@ -157,9 +158,9 @@
             <div class="research-title">
               <h4 class="heading-4">{{ b.title }}</h4>
             </div>
-            <div>
+            <!--<div>
               <p class="paragraph-11"> {{b.doc_abs }}</p>
-            </div>
+            </div>-->
             <div>
               <a href={{ b.doc_path }} class="w-inline-block">
                 <div>Read</div>
@@ -167,8 +168,7 @@
             </div>
           </div>
           {% endfor %}
-         </div>
         </div>
-      </section>
-  </div>
+      </div>
+    </section>
 {% endblock %}

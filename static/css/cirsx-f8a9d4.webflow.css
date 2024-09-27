@@ -4314,7 +4314,7 @@ blockquote {
   }
 
   .container {
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     max-width: 100%;
     padding-top: 0;

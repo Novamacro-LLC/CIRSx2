@@ -1,15 +1,14 @@
 {% extends 'base.html' %}{% load static %}{% block content %}
   <div class="page-title">
     <div class="w-layout-blockcontainer container w-container">
-      <div class="sub-title"><img src="images/sub-title.svg" loading="lazy" alt="Icon">
-        <div class="text-block-19">Patient Resources</div>
+      <div class="sub-title"><img src={% static 'images/sub-title.svg' %} loading="lazy" alt="Icon">
+        <div class="text-block-17">Patient Resources</div>
       </div>
-      <h1 class="main-title">Support For Patients with CIRS</h1>
+      <h1 class="about-main-title">Support For Patients with CIRS</h1>
     </div>
-  </div>
   <div class="page-data">
-    <div class="w-layout-blockcontainer container bm100 w-container">
-      <div class="award-container">
+    <section class="interviews">
+      <div class="container content-grid">
         {% for i in info %}
         <a data-w-id="fdee9fdb-7f47-1b5a-deea-6110a8c6dd67" href="#" class="post-link w-inline-block">
           <div class="post-img">
@@ -30,7 +29,7 @@
         </a>
         {% endfor %}
       </div>
-    </div>
+    </section>
   </div>
  {% endblock content %} 
   

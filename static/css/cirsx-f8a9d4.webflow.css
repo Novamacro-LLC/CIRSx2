@@ -369,13 +369,13 @@ blockquote {
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: baseline;
   width: 100%;
   max-width: 95%;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
-  display: flex;
+  display: block;
   position: static;
   overflow: visible;
 }

@@ -11,8 +11,7 @@ urlpatterns = [
     path('conference/', views.conference, name='conference'),
     path('cirsx-institute/', views.institute, name='cirsx-institute'),
     path('research-lab/', views.research_lab, name='research-lab'),
-    path('shoey-awards/', views.shoey_awards, name='shoey-awards'),
-    path('patient-resources/', views.patient_resources, name='patient-resources')
+    path('shoey-awards/', views.shoey_awards, name='shoey-awards')
 ]
 
 

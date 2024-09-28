@@ -50,6 +50,7 @@ def healers(request):
 def patient_resources(request):
     title = 'Patient Resources'
     resource = PatientHelp.objects.all()
+    print(resource)
     pat = []
     for r in resource:
         name = r.name
@@ -57,5 +58,7 @@ def patient_resources(request):
         link = doc.doc_path.split('/')
         path = 'https://player.vimeo.com/video/'+ link[3] +'?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:60%;height:60%;" title=' + name
         pat.append({'name': name, 'path': path})
+        print(name)
+        print(path)
     context = {'title': title, 'pat': pat}
     return render(request, 'patient-resources.html', context)

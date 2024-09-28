@@ -4591,7 +4591,7 @@ blockquote {
     max-width: 1827px;
     padding-left: 0%;
     padding-right: 0%;
-    display: flex;
+    display: block;
   }
 
   .container.no-margin {

@@ -4676,6 +4676,16 @@ blockquote {
     max-width: 1660px;
   }
 
+  .section-title.m-large {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    width: 100%;
+    display: block;
+  }
+
   .title {
     margin-top: 15px;
     font-size: 40px;

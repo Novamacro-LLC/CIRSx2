@@ -10,74 +10,25 @@
   <div class="page-data">
     <div class="w-layout-blockcontainer container bm100 w-container">
       <div class="award-container">
-        <div class="award">
-          <div class="post-img"><img src="images/placeholder.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 27vw, (max-width: 991px) 28vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 586.3359375px" srcset="images/placeholder-p-500.png 500w, images/placeholder-p-800.png 800w, images/placeholder-p-1080.png 1080w, images/placeholder-p-1600.png 1600w, images/placeholder-p-2000.png 2000w, images/placeholder-p-2600.png 2600w, images/placeholder.png 2880w" alt="Post Image" class="post-image"></div>
+        {% for i in info %}
+        <a data-w-id="fdee9fdb-7f47-1b5a-deea-6110a8c6dd67" href="#" class="post-link w-inline-block">
+          <div class="post-img">
+              <div style="padding:56.25% 0 0 0;position:relative;">
+                  <iframe src="{{ i.path }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:60%;height:60%;" title={{ i.name }}></iframe>
+              </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
           <div class="post-data">
             <div>
-              <h4 class="post-title">Item Title</h4>
+              <h4 class="post-title">{{ i.name }}</h4>
+            </div>
+            <!--<div class="post-date">
+              <div class="post-category">Category</div>
+              <div>7/5/2024</div>
+            </div>-->
             </div>
           </div>
-        </div>
-        <div class="award">
-          <div class="post-img"><img src="images/placeholder.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 27vw, (max-width: 991px) 28vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 586.3359375px" srcset="images/placeholder-p-500.png 500w, images/placeholder-p-800.png 800w, images/placeholder-p-1080.png 1080w, images/placeholder-p-1600.png 1600w, images/placeholder-p-2000.png 2000w, images/placeholder-p-2600.png 2600w, images/placeholder.png 2880w" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-            </div>
-          </div>
-        </div>
-        <div class="award">
-          <div class="post-img"><img src="images/placeholder.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 27vw, (max-width: 991px) 28vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 586.3359375px" srcset="images/placeholder-p-500.png 500w, images/placeholder-p-800.png 800w, images/placeholder-p-1080.png 1080w, images/placeholder-p-1600.png 1600w, images/placeholder-p-2000.png 2000w, images/placeholder-p-2600.png 2600w, images/placeholder.png 2880w" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="award-container">
-        <div class="award">
-          <div class="post-img"><img src="images/placeholder.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 27vw, (max-width: 991px) 28vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 586.3359375px" srcset="images/placeholder-p-500.png 500w, images/placeholder-p-800.png 800w, images/placeholder-p-1080.png 1080w, images/placeholder-p-1600.png 1600w, images/placeholder-p-2000.png 2000w, images/placeholder-p-2600.png 2600w, images/placeholder.png 2880w" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-            </div>
-          </div>
-        </div>
-        <div class="award">
-          <div class="post-img"><img src="images/placeholder.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 27vw, (max-width: 991px) 28vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 586.3359375px" srcset="images/placeholder-p-500.png 500w, images/placeholder-p-800.png 800w, images/placeholder-p-1080.png 1080w, images/placeholder-p-1600.png 1600w, images/placeholder-p-2000.png 2000w, images/placeholder-p-2600.png 2600w, images/placeholder.png 2880w" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-            </div>
-          </div>
-        </div>
-        <div class="award">
-          <div class="post-img"><img src="images/placeholder.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 27vw, (max-width: 991px) 28vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 586.3359375px" srcset="images/placeholder-p-500.png 500w, images/placeholder-p-800.png 800w, images/placeholder-p-1080.png 1080w, images/placeholder-p-1600.png 1600w, images/placeholder-p-2000.png 2000w, images/placeholder-p-2600.png 2600w, images/placeholder.png 2880w" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="award-container">
-        <div class="award w33">
-          <div class="post-img"><img src="images/placeholder.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 28vw, (max-width: 1439px) 27vw, (max-width: 1919px) 28vw, 566.3671875px" srcset="images/placeholder-p-500.png 500w, images/placeholder-p-800.png 800w, images/placeholder-p-1080.png 1080w, images/placeholder-p-1600.png 1600w, images/placeholder-p-2000.png 2000w, images/placeholder-p-2600.png 2600w, images/placeholder.png 2880w" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-            </div>
-          </div>
-        </div>
-        <div class="award w33">
-          <div class="post-img"><img src="images/placeholder.png" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 28vw, (max-width: 1439px) 27vw, (max-width: 1919px) 28vw, 566.3671875px" srcset="images/placeholder-p-500.png 500w, images/placeholder-p-800.png 800w, images/placeholder-p-1080.png 1080w, images/placeholder-p-1600.png 1600w, images/placeholder-p-2000.png 2000w, images/placeholder-p-2600.png 2600w, images/placeholder.png 2880w" alt="Post Image" class="post-image"></div>
-          <div class="post-data">
-            <div>
-              <h4 class="post-title">Item Title</h4>
-            </div>
-          </div>
-        </div>
+        </a>
+        {% endfor %}
       </div>
     </div>
   </div>

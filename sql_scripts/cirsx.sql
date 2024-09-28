@@ -1800,3 +1800,40 @@ insert into cirsx_prod.public.public_shoeyawards (name, description, year, image
         ('Michael Schrantz', 'EDUCATE Award', '2024', 'images/Educate-2024-Schrantz.png'),
         ('Scott McMahon', 'HEROES Award', '2024', 'images/Heroes-2024-McMahon.png'),
         ('Kristina Baehr', 'JUSTICE Award', '2024', 'images/Justice-2024-Baehr.png');
+
+
+insert into cirsx_prod.public.library_document(doctyp_num_id, aud_num_id, doc_path, title)
+values
+    ('3', '1', 'https://vimeo.com/681569287', 'Overview of the Biotoxin Pathway with Dr Eric Dorninger'),
+    ('3', '1', 'https://vimeo.com/710494008', 'So You Think You May Have CIRS'),
+    ('3', '1', 'https://vimeo.com/749384803', 'CIRSx: How is CIRS Diagnosed'),
+    ('3', '1', 'https://vimeo.com/749364910', 'What to Expect with CIRS Treatment'),
+    ('3', '1', 'https://vimeo.com/830249790', 'DocTalk: What is CIRS? - 1 Introduction'),
+    ('3', '1', 'https://vimeo.com/830389267', 'DocTalk: What is CIRS? - 2 Regulation and Disregulation'),
+    ('3', '1', 'https://vimeo.com/830391527', 'DocTalk: What is CIRS? - 3 Immune System'),
+    ('3', '1', 'https://vimeo.com/830393213', 'DocTalk: What is CIRS? - 4 Perfusion'),
+    ('3', '1', 'https://vimeo.com/830394583', 'DocTalk: What is CIRS? - 5 Energy Production'),
+    ('3', '1', 'https://vimeo.com/830395867', 'DocTalk: What is CIRS? - 6 Tight Junctions'),
+    ('3', '1', 'https://vimeo.com/830397552', 'DocTalk: What is CIRS? - 7 Hypothalamus'),
+    ('3', '1', 'https://vimeo.com/830398710', 'DocTalk: What is CIRS? - 8 Pituitary'),
+    ('3', '1', 'https://vimeo.com/830399673', 'DocTalk: What is CIRS? - 9 Autonomic Nervous System'),
+    ('3', '1', 'https://vimeo.com/830400430', 'DocTalk: What is CIRS? - 10 Putting It All Together');
+
+
+
+insert into cirsx_prod.public.library_patienthelp (name, doc_num_id, vid_order)
+    values
+        ('Overview of the Biotoxin Pathway with Dr Eric Dorninger', '1443', '1'),
+        ('So You Think You May Have CIRS', '1444', '2'),
+        ('CIRSx: How is CIRS Diagnosed', '1445', '3'),
+        ('What to Expect with CIRS Treatment', '1446', '4'),
+        ('DocTalk: What is CIRS? - 1 Introduction', '1447', '5'),
+        ('DocTalk: What is CIRS? - 2 Regulation and Disregulation', '1448', '6'),
+        ('DocTalk: What is CIRS? - 3 Immune System', '1449', '7'),
+        ('DocTalk: What is CIRS? - 4 Perfusion', '1450', '8'),
+        ('DocTalk: What is CIRS? - 5 Energy Production', '1451', '9'),
+        ('DocTalk: What is CIRS? - 6 Tight Junctions', '1452', '10'),
+        ('DocTalk: What is CIRS? - 7 Hypothalamus', '1453', '11'),
+        ('DocTalk: What is CIRS? - 8 Pituitary', '1454', '12'),
+        ('DocTalk: What is CIRS? - 9 Autonomic Nervous System', '1455', '13'),
+        ('DocTalk: What is CIRS? - 10 Putting It All Together', '1456', '14');

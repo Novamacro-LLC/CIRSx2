@@ -1,6 +1,7 @@
+from Cython.Compiler.Errors import context
 from django.shortcuts import render
 from django.db import connection
-from .models import Document, CurationCategory, HealersHelpers
+from .models import Document, PatientHelp, HealersHelpers
 
 
 def curr_sql():
@@ -42,7 +43,20 @@ def healers(request):
         name = h.name
         doc = Document.objects.filter(id=h.doc_num_id).first()
         link = doc.doc_path.split('/')
-        path = 'https://player.vimeo.com/video/'+ link[3] +'?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:60%;height:60%;" title=' + name
+        path = 'https://player.vimeo.com/video/'+ link[3] +'?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"'
         heal.append({'name': name, 'path': path})
     context = {'title': title,  'heal': heal}
     return render(request, 'healers-helpers.html', context)
+
+def patient_resouces(request):
+    title = 'Patient Resources'
+    resource = PatientHelp.objects.all()
+    info = []
+    for r in resource:
+        name = r.name
+        doc = Document.objects.filter(id=r.doc_num_id).first()
+        link = doc.doc_path.split('/')
+        path = 'https://player.vimeo.com/video/'+ link[3] +'?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:60%;height:60%;" title=' + name
+        info.append({'name': name, 'path': path})
+    context = {'title': title}
+    return render(request, 'patient-resources.html', context())

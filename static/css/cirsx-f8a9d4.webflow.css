@@ -2207,6 +2207,7 @@ blockquote {
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
+  width: 350px;
 }
 
 .post-image {
@@ -2928,6 +2929,7 @@ blockquote {
   align-items: center;
   min-width: 80%;
   max-width: 82%;
+  margin-top: -150px;
   margin-left: auto;
   margin-right: auto;
   padding: 16px;
@@ -4216,16 +4218,20 @@ blockquote {
   }
 
   .hero {
+    margin-bottom: 400px;
     position: relative;
   }
 
   .hero-wrap {
     filter: drop-shadow(0 2px 5px #0000001a);
+    justify-content: center;
+    align-items: center;
     min-width: 84%;
     max-width: 81%;
     height: auto;
+    margin-top: -550px;
     padding: 11px;
-    top: 616px;
+    top: 238px;
   }
 
   .hero-block {
@@ -4450,6 +4456,7 @@ blockquote {
     border-radius: 14px;
     min-width: 84%;
     max-width: 81%;
+    margin-top: -100px;
     padding: 35px;
     position: relative;
     top: -200px;

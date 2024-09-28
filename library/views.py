@@ -1,4 +1,3 @@
-from Cython.Compiler.Errors import context
 from django.shortcuts import render
 from django.db import connection
 from .models import Document, PatientHelp, HealersHelpers

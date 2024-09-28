@@ -48,7 +48,7 @@ def healers(request):
     context = {'title': title,  'heal': heal}
     return render(request, 'healers-helpers.html', context)
 
-def patient_resouces(request):
+def patient_resources(request):
     title = 'Patient Resources'
     resource = PatientHelp.objects.all()
     info = []

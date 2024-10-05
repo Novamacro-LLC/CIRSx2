@@ -1817,9 +1817,23 @@ values
     ('3', '1', 'https://vimeo.com/830397552', 'DocTalk: What is CIRS? - 7 Hypothalamus'),
     ('3', '1', 'https://vimeo.com/830398710', 'DocTalk: What is CIRS? - 8 Pituitary'),
     ('3', '1', 'https://vimeo.com/830399673', 'DocTalk: What is CIRS? - 9 Autonomic Nervous System'),
-    ('3', '1', 'https://vimeo.com/830400430', 'DocTalk: What is CIRS? - 10 Putting It All Together');
-
-
+    ('3', '1', 'https://vimeo.com/830400430', 'DocTalk: What is CIRS? - 10 Putting It All Together'),
+    ('3', '1', 'https://vimeo.com/662740138','CIRSx Medical Glossary - Part 1: Microbiology'),
+    ('3', '1', 'https://vimeo.com/666554926','CIRSx Medical Glossary - Part 2: Cell Biology Basics!'),
+    ('3', '1', 'https://vimeo.com/662741130','CIRSx Medical Glossary - Part 3, Section 1: Immune System'),
+    ('3', '1', 'https://vimeo.com/662741654','CIRSx Medical Glossary - Part 3, Section 2: Immune System'),
+    ('3', '1', 'https://vimeo.com/662742402','CIRSx Medical Glossary - Part 4, Section 1: CIRS Basics Pathophysiology'),
+    ('3', '1', 'https://vimeo.com/662742744','CIRSx Medical Glossary - Part 4, Section 2: CIRS Basics - Lab Tests'),
+    ('3', '1', 'https://vimeo.com/662743278','CIRSx Medical Glossary - Part 4, Section 3: CIRS Basics - Medicine and Other Therapies'),
+    ('3', '1', 'https://vimeo.com/662743675','CIRSx Medical Glossary - Part 5: Molecular Hypometabolism Basics!'),
+    ('3', '1', 'https://vimeo.com/679720362','CIRSx Medical Glossary - Part 6: Medical Differential Diagnosis'),
+    ('3', '1', 'https://vimeo.com/669176887','Testing & Inspection Equipment - Part 1'),
+    ('3', '1', 'https://vimeo.com/669177094','Testing & Inspection Equipment - Part 2'),
+    ('3', '1', 'https://vimeo.com/673715724','Testing & Inspection Equipment - Part 3'),
+    ('3', '1', 'https://vimeo.com/674007341','Test Methods - Part 1'),
+    ('3', '1', 'https://vimeo.com/669177791','Test Methods - Part 2'),
+    ('3', '1', 'https://vimeo.com/669178107','Test Methods - Part 3'),
+    ('3', '1', 'https://vimeo.com/680062977','Environmental Analysis Methods');
 
 insert into cirsx_prod.public.library_patienthelp (name, doc_num_id, vid_order)
     values
@@ -1836,4 +1850,21 @@ insert into cirsx_prod.public.library_patienthelp (name, doc_num_id, vid_order)
         ('DocTalk: What is CIRS? - 7 Hypothalamus', '1453', '11'),
         ('DocTalk: What is CIRS? - 8 Pituitary', '1454', '12'),
         ('DocTalk: What is CIRS? - 9 Autonomic Nervous System', '1455', '13'),
-        ('DocTalk: What is CIRS? - 10 Putting It All Together', '1456', '14');
+        ('DocTalk: What is CIRS? - 10 Putting It All Together', '1456', '14'),
+        ('CIRSx Medical Glossary - Part 1: Microbiology','1457','15'),
+        ('CIRSx Medical Glossary - Part 2: Cell Biology Basics!','1458','16'),
+        ('CIRSx Medical Glossary - Part 3, Section 1: Immune System','1459','17'),
+        ('CIRSx Medical Glossary - Part 3, Section 2: Immune System','1460','18'),
+        ('CIRSx Medical Glossary - Part 4, Section 1: CIRS Basics Pathophysiology','1461','19'),
+        ('CIRSx Medical Glossary - Part 4, Section 2: CIRS Basics - Lab Tests','1462','20'),
+        ('CIRSx Medical Glossary - Part 4, Section 3: CIRS Basics - Medicine and Other Therapies','1463','21'),
+        ('CIRSx Medical Glossary - Part 5: Molecular Hypometabolism Basics!','1464','22'),
+        ('CIRSx Medical Glossary - Part 6: Medical Differential Diagnosis','1465','23'),
+        ('Testing & Inspection Equipment - Part 1','1466','24'),
+        ('Testing & Inspection Equipment - Part 2','1467','25'),
+        ('Testing & Inspection Equipment - Part 3','1468','26'),
+        ('Test Methods - Part 1','1469','27'),
+        ('Test Methods - Part 2','1470','28'),
+        ('Test Methods - Part 3','1471','29'),
+        ('Environmental Analysis Methods','1472','30');
+

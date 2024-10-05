@@ -46,3 +46,8 @@ def shoey_awards(request):
     # Add CTA
     context = {'title': title, 'award':award}
     return render(request, 'shoey-awards.html', context)
+
+def conference_archives(request):
+    title = 'Past Conferences'
+    context = {'title': title}
+    return render(request, 'archives.html', context)

@@ -99,11 +99,11 @@
               <div class="search-container">
                 <form class="search-input-wrapper" method="GET">
                   {% if q == None %}  
-                  <input type="text" class="search-input" placeholder="Search...">
+                  <input type="text" class="search-input" placeholder="Search..." name="q">
                   {% else %}
-                  <input type="text" class="search-input" value={{ q }}>
+                  <input type="text" class="search-input" name="q" value={{ q }}>
                   {% endif %}  
-                    <button type="button" class="clear-btn" onclick="clearInput()">&times;</button>
+                    <button type="button" class="clear-btn" >&times;</button>
                   <button type="submit" class="submit-btn">Submit</button>
                 </form>
                 <!--<div class="dropdown" id="dropdown">

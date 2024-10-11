@@ -1,5 +1,4 @@
 {% extends 'base.html' %}{% load static %}{% block content %}
-
   <div class="page-title page-search">
     <div class="w-layout-blockcontainer container w-container">
       <div class="sub-title"><img src={% static 'images/sub-title.svg'%} loading="lazy" alt="Icon">
@@ -94,7 +93,7 @@
                 <div class="search-container">
                   <form class="search-input-wrapper" method="GET">
                     {% if q == None %}
-                      <input type="text" class="search-input" value="Search..." name="q">
+                      <input type="text" class="search-input" placeholder="Search..." name="q">
                     {% else %}
                       <input type="text" class="search-input" name="q" value={{ q }}>
                     {% endif %}

@@ -23,7 +23,7 @@
                     .search-container {
                         position: relative;
                         width: 100%;
-                        max-width: 100%; /* Ensure the container is 100% width */
+                        max-width: 100%;
                         margin: 0 auto;
                     }
                     .search-input-wrapper {
@@ -33,9 +33,9 @@
                         width: 100%;
                     }
                     .search-input {
-                        width: 100%;
-                        padding: 10px 40px 10px 10px; /* Adds padding on the right for the 'X' button */
-                        border-radius: 5px 0 0 5px;
+                        width: calc(100% - 80px); /* Adjust width to accommodate buttons */
+                        padding: 10px;
+                        border-radius: 5px;
                         border: 1px solid #ccc;
                         font-size: 16px;
                         outline: none;
@@ -53,14 +53,20 @@
                         display: none; /* Initially hidden */
                     }
                     .submit-btn {
-                        padding: 10px 20px;
-                        background-color: #007bff;
-                        color: white;
-                        border: 1px solid #007bff;
-                        border-radius: 0 5px 5px 0;
+                        margin-left: 10px;
+                        padding: 10px;
+                        background-color: #f0f0f0;
+                        border: none;
+                        border-radius: 5px;
                         font-size: 16px;
                         cursor: pointer;
-                        height: 100%;
+                        display: none; /* Initially hidden */
+                    }
+                    .submit-btn {
+                        background-color: #007bff;
+                        color: white;
+                        display: inline-block; /* Submit button should always be visible */
+                        height:45px;
                     }
                     .dropdown {
                         position: absolute;

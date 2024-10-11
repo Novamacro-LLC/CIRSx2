@@ -37,7 +37,6 @@ def resource_library(request):
     else:
         rsch = Document.objects.filter(doctyp_num=2).order_by('title')
         docs = None
-        q= ''
 
     context = {'q': q, 'docs': docs, 'rsch': rsch, 'title': title}
     return render(request, 'resource-library.html', context)

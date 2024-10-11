@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.db import connection
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank, SearchHeadline
+from django.core.paginator import Paginator
 from .models import Document, PatientHelp, HealersHelpers
 
 
@@ -12,14 +14,60 @@ def curr_sql():
 
 def resource_library(request):
     title = 'Resource Library'
-    rsch = Document.objects.filter(doctyp_num=2).order_by('title')
-    context = {'rsch': rsch, 'title': title}
+    q = request.GET.get('q')
+
+    if q:
+        vector = SearchVector('title', 'author', 'keywords', 'doc_txt')
+        query = SearchQuery(q)
+        search_headline = SearchHeadline('doc_txt', query)
+
+        # videos = Video.objects.filter(title__search=q)
+        # videos = Video.objects.annotate(search=vector).filter(search=query)
+        # videos = Video.objects.annotate(rank=SearchRank(vector, query)).filter(rank__gte=0.001).order_by('-rank')
+        doc = Document.objects.annotate(
+            rank=SearchRank(vector, query),
+            headline=search_headline).filter(
+            rank__gte=0.001).filter(doctyp_num=2).order_by('-rank')
+        rsch = doc.all()
+
+        p = Paginator(doc, 50)
+        page = request.GET.get('page')
+        docs = p.get_page(page)
+
+    else:
+        rsch = Document.objects.filter(doctyp_num=2).order_by('title')
+        docs = None
+
+    context = {'q': q, 'docs': docs, 'rsch': rsch, 'title': title}
     return render(request, 'resource-library.html', context)
 
 def bibliographies(request):
     title = 'Bibliographies'
-    bib = Document.objects.filter(doctyp_num=1).order_by('title')
-    context = {'bib': bib, 'title': title}
+    q = request.GET.get('q')
+
+    if q:
+        vector = SearchVector('title', 'author', 'keywords', 'doc_txt')
+        query = SearchQuery(q)
+        search_headline = SearchHeadline('doc_txt', query)
+
+        # videos = Video.objects.filter(title__search=q)
+        # videos = Video.objects.annotate(search=vector).filter(search=query)
+        # videos = Video.objects.annotate(rank=SearchRank(vector, query)).filter(rank__gte=0.001).order_by('-rank')
+        doc = Document.objects.annotate(
+            rank=SearchRank(vector, query),
+            headline=search_headline).filter(
+            rank__gte=0.001).filter(doctyp_num=1).order_by('-rank')
+        bib = doc.all()
+
+        p = Paginator(doc, 50)
+        page = request.GET.get('page')
+        docs = p.get_page(page)
+
+    else:
+        bib = Document.objects.filter(doctyp_num=1).order_by('title')
+        docs = None
+
+    context = {'q': q, 'docs': docs, 'bib': bib, 'title': title}
     return render(request, 'bibliographies.html', context)
 
 def curation(request):

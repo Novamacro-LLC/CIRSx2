@@ -2228,8 +2228,6 @@ blockquote {
 .post-image {
   clear: both;
   object-fit: contain;
-  width: 351px;
-  max-width: 351px;
   min-height: auto;
   max-height: none;
 }

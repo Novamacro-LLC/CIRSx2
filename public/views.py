@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from library.models import Document
+from .models import BOTY, ShoeyAwards
 
 
 def home(request):
@@ -15,8 +17,9 @@ def about(request):
 
 def boty(request):
     title = 'Book of the Year'
-    # Add to db and CTA
-    context = {'title': title}
+    boy = BOTY.objects.all().order_by('year')
+    # Add CTA
+    context = {'title': title, 'boy': boy}
     return render(request, 'book-of-the-year.html', context)
 
 def institute(request):
@@ -31,8 +34,20 @@ def conference(request):
     context = {'title': title}
     return render(request, 'conference.html', context)
 
-def healers(request):
-    title = 'Healers and Helpers'
+def research_lab(request):
+    title = 'Research Lab'
     # Add to db and CTA
     context = {'title': title}
-    return render(request, 'healers-helpers.html', context)
+    return render(request, 'research-lab.html', context)
+
+def shoey_awards(request):
+    title = 'Shoey Awards'
+    award = ShoeyAwards.objects.all()
+    # Add CTA
+    context = {'title': title, 'award':award}
+    return render(request, 'shoey-awards.html', context)
+
+def conference_archives(request):
+    title = 'Past Conferences'
+    context = {'title': title}
+    return render(request, 'archives.html', context)

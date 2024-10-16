@@ -1,0 +1,180 @@
+{% extends 'base.html' %}{% load static %}{% block content %}
+  <div class="page-title">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="sub-title"><img src={% static 'images/sub-title.svg'%} loading="lazy" alt="Icon">
+        <div class="text-block-20">Resources on CIRS</div>
+      </div>
+      <h1 class="main-title">Resource Library</h1>
+      <p class="cta-text"><strong class="bold-text">Provided by Ritchie Shoemaker MD, Scott McMahon MD and Greg Weatherman, CMC <em class="italic-text-11">In association with The Learning Center</em></strong></p>
+    </div>
+  </div>
+  <div class="page-data">
+    <section class="research-options">
+      <div class="w-layout-blockcontainer container w-container">
+          <div class="cta-wrap search-wrap">
+          <div class="text-block-23">Search Our Research Papers</div>
+          <div class="code-embed w-embed w-script">
+            <head>
+              <style>
+                    body {
+                        font-family: 'Manrope', sans-serif;
+                        padding: 20px;
+                    }
+                    .search-container {
+                        position: relative;
+                        width: 100%;
+                        max-width: 100%;
+                        margin: 0 auto;
+                    }
+                    .search-input-wrapper {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        width: 100%;
+                    }
+                    .search-input {
+                        width: calc(100% - 80px); /* Adjust width to accommodate buttons */
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: 1px solid #ccc;
+                        font-size: 16px;
+                        outline: none;
+                        box-sizing: border-box;
+                    }
+                    .clear-btn {
+                        position: absolute;
+                        right: 70px; /* Position relative to the right side */
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-color: transparent;
+                        border: none;
+                        font-size: 18px;
+                        cursor: pointer;
+                        display: none; /* Initially hidden */
+                    }
+                    .submit-btn {
+                        margin-left: 10px;
+                        padding: 10px;
+                        background-color: #f0f0f0;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        display: none; /* Initially hidden */
+                    }
+                    .submit-btn {
+                        background-color: #007bff;
+                        color: white;
+                        display: inline-block; /* Submit button should always be visible */
+                        height:45px;
+                    }
+                    .dropdown {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        background-color: #fff;
+                        max-height: 200px;
+                        overflow-y: auto;
+                        display: none;
+                        z-index: 1000;
+                        box-sizing: border-box;
+                    }
+                    .dropdown.active {
+                        display: block;
+                    }
+                    .dropdown-item {
+                        padding: 10px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    }
+                    .dropdown-item:hover {
+                        background-color: #f0f0f0;
+                    }
+                </style>
+            </head>
+            <body>
+              <div class="search-container">
+                <form class="search-input-wrapper" method="GET">
+                  {% if q == None %}  
+                  <input type="text" class="search-input" placeholder="Search..." name="q">
+                  {% else %}
+                  <input type="text" class="search-input" name="q" >
+                  {% endif %}  
+                    <button type="button" class="clear-btn" >&times;</button>
+                  <button type="submit" class="submit-btn">Submit</button>
+                </form>
+                <!--<div class="dropdown" id="dropdown">
+                  <div class="dropdown-item">Result 1</div>
+                  <div class="dropdown-item">Result 2</div>
+                  <div class="dropdown-item">Result 3</div>
+                  <div class="dropdown-item">Result 4</div>
+                </div>-->
+              </div>
+              <!--<script>
+                function handleInput() {
+                    const searchInput = document.querySelector('.search-input').value;
+                    const dropdown = document.getElementById('dropdown');
+                    const clearBtn = document.querySelector('.clear-btn');
+                    if (searchInput.trim() !== "") {
+                        dropdown.classList.add('active');
+                        clearBtn.style.display = 'block';
+                    } else {
+                        dropdown.classList.remove('active');
+                        clearBtn.style.display = 'none';
+                    }
+                }
+                function handleKeydown(event) {
+                    const dropdown = document.getElementById('dropdown');
+                    if (event.key === "Escape") {
+                        dropdown.classList.remove('active');
+                    }
+                }
+                function clearInput() {
+                    const searchInput = document.querySelector('.search-input');
+                    searchInput.value = '';
+                    searchInput.focus();
+                    handleInput();
+                }
+                function hideDropdown(event) {
+                    const dropdown = document.getElementById('dropdown');
+                    const searchInput = document.querySelector('.search-input-wrapper');
+                    if (!searchInput.contains(event.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                }
+                function handleSubmit(event) {
+                    event.preventDefault(); // Prevent the default form submission
+                    const searchInput = document.querySelector('.search-input').value;
+                    alert("Submitted search for: " + searchInput); // For demonstration
+                    clearInput(); // Optionally clear the input after submission
+                }
+                document.addEventListener('click', hideDropdown);
+            </script>-->
+          </body>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="interviews">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="research-wrapper">
+        {% for r in rsch %}
+          <div class="research-card">
+            <div class="research-title">
+              <h4 class="heading-4">{{ r.title}}</h4>
+            </div>
+            <div>
+              <a href={{ r.doc_path }} class="w-inline-block">
+                <div class="text-block-22">Read</div>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

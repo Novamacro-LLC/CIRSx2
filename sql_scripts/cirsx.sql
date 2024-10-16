@@ -2,7 +2,7 @@
  This is the CIRSx data ingestion sql that will be run after the implementation
 
  Adding Countries
- */
+
 
 
 
@@ -1749,3 +1749,122 @@ values
     ('6','1','https://vimeo.com/showcase/10789440','Gastroenterology'                                               ),
     ('6','1','https://vimeo.com/showcase/10789441','Interviews / Podcasts'                                          ),
     ('6','1','https://vimeo.com/showcase/10789443','Healthcare Panels'                                              );
+*/
+insert into cirsx_prod.public.library_document(doctyp_num_id, aud_num_id, doc_path, title)
+values
+    ('3', '1', 'https://vimeo.com/899352346', 'Dr. Richie Shoemaker'),
+    ('3', '1', 'https://vimeo.com/899351353', 'Dr. Scott McMahon'),
+    ('3', '1', 'https://vimeo.com/899350310', 'Dr. Eric Dorninger'),
+    ('3', '1', 'https://vimeo.com/899349023', 'Dr. James Ryan'),
+    ('3', '1', 'https://vimeo.com/899372152', 'Deborah Waidner'),
+    ('3', '1', 'https://vimeo.com/899367862', 'Sally Shoemaker'),
+    ('3', '1', 'https://vimeo.com/726476242', 'Denis Katz and Michael Macione - Hopkinton Pharmacy'),
+    ('3', '1', 'https://vimeo.com/899366836', 'Gianni Rossini'),
+    ('3', '1', 'https://vimeo.com/899951463', 'Dr. Joe Musto'),
+    ('3', '1', 'https://vimeo.com/899938270', 'Robert McKee, JD'),
+    ('3', '1', 'https://vimeo.com/899358335', 'Dr. Drew Heyman'),
+    ('3', '1', 'https://vimeo.com/899380461', 'Jenny Johnson'),
+    ('3', '1', 'https://vimeo.com/899369690', 'Dr. Jodie Dashore'),
+    ('3', '1', 'https://vimeo.com/899379322', 'Dr. Jackie Meinhardt'),
+    ('3', '1', 'https://vimeo.com/900284691', 'John Banta');
+
+insert into cirsx_prod.public.library_healershelpers(name, doc_num_id, vid_order)
+    values
+    ('Dr. Richie Shoemaker', '1428','1'),
+    ('Dr. Scott McMahon', '1429', '2'),
+    ('Dr. Eric Dorninger', '1430','3'),
+    ('Dr. James Ryan', '1431','4'),
+    ('Deborah Waidner', '1432', '5'),
+    ('Sally Shoemaker', '1433', '6'),
+    ('Denis Katz and Michael Macione - Hopkinton Pharmacy', '1434', '7'),
+    ('Gianni Rossini', '1435', '8'),
+    ('Dr. Joe Musto', '1436', '9'),
+    ('Robert McKee, JD', '1437', '10'),
+    ('Dr. Drew Heyman', '1438', '11'),
+    ('Jenny Johnson', '1439', '12'),
+    ('Dr. Jodie Dashore', '1440', '13'),
+    ('Dr. Jackie Meinhardt', '1441', '14'),
+    ('John Banta', '1442', '15');
+
+insert into cirsx_prod.public.public_boty (title, author, year, images)
+    values
+        ('The Art and Science of CIRS Medicine', 'Richie Shoemaker, MD; Scott McMahon, MD; Andrew Heyman, MD',  '2021','images/2021-Book-of-the-Year.jpg'),
+        ('Prescription for a Healthy House', 'Paula Baker LaPorte; John Banta', '2022', 'images/2022-Book-of-the-Year.jpg'),
+        ('Nutrition and Integrative Medicine for Clinicians', 'Aruna Bakhr; April Vukelic','2023', 'images/2023-Book-of-the-Year.jpg');
+
+insert into cirsx_prod.public.public_shoeyawards (name, description, year, image)
+    values
+        ('Christian Navarro Torres','ACCLAIM Award', '2024', 'images/Acclaim-2024-Torres.png'),
+        ('Chris Foth', 'ANGELS Award', '2024', 'images/Angels-2024-Foth.png'),
+        ('David Lark', 'BUILD Award', '2024', 'images/Build-2024-Lark.png'),
+        ('Michael Schrantz', 'EDUCATE Award', '2024', 'images/Educate-2024-Schrantz.png'),
+        ('Scott McMahon', 'HEROES Award', '2024', 'images/Heroes-2024-McMahon.png'),
+        ('Kristina Baehr', 'JUSTICE Award', '2024', 'images/Justice-2024-Baehr.png');
+
+
+insert into cirsx_prod.public.library_document(doctyp_num_id, aud_num_id, doc_path, title)
+values
+    ('3', '1', 'https://vimeo.com/681569287', 'Overview of the Biotoxin Pathway with Dr Eric Dorninger'),
+    ('3', '1', 'https://vimeo.com/710494008', 'So You Think You May Have CIRS'),
+    ('3', '1', 'https://vimeo.com/749384803', 'CIRSx: How is CIRS Diagnosed'),
+    ('3', '1', 'https://vimeo.com/749364910', 'What to Expect with CIRS Treatment'),
+    ('3', '1', 'https://vimeo.com/830249790', 'DocTalk: What is CIRS? - 1 Introduction'),
+    ('3', '1', 'https://vimeo.com/830389267', 'DocTalk: What is CIRS? - 2 Regulation and Disregulation'),
+    ('3', '1', 'https://vimeo.com/830391527', 'DocTalk: What is CIRS? - 3 Immune System'),
+    ('3', '1', 'https://vimeo.com/830393213', 'DocTalk: What is CIRS? - 4 Perfusion'),
+    ('3', '1', 'https://vimeo.com/830394583', 'DocTalk: What is CIRS? - 5 Energy Production'),
+    ('3', '1', 'https://vimeo.com/830395867', 'DocTalk: What is CIRS? - 6 Tight Junctions'),
+    ('3', '1', 'https://vimeo.com/830397552', 'DocTalk: What is CIRS? - 7 Hypothalamus'),
+    ('3', '1', 'https://vimeo.com/830398710', 'DocTalk: What is CIRS? - 8 Pituitary'),
+    ('3', '1', 'https://vimeo.com/830399673', 'DocTalk: What is CIRS? - 9 Autonomic Nervous System'),
+    ('3', '1', 'https://vimeo.com/830400430', 'DocTalk: What is CIRS? - 10 Putting It All Together'),
+    ('3', '1', 'https://vimeo.com/662740138','CIRSx Medical Glossary - Part 1: Microbiology'),
+    ('3', '1', 'https://vimeo.com/666554926','CIRSx Medical Glossary - Part 2: Cell Biology Basics!'),
+    ('3', '1', 'https://vimeo.com/662741130','CIRSx Medical Glossary - Part 3, Section 1: Immune System'),
+    ('3', '1', 'https://vimeo.com/662741654','CIRSx Medical Glossary - Part 3, Section 2: Immune System'),
+    ('3', '1', 'https://vimeo.com/662742402','CIRSx Medical Glossary - Part 4, Section 1: CIRS Basics Pathophysiology'),
+    ('3', '1', 'https://vimeo.com/662742744','CIRSx Medical Glossary - Part 4, Section 2: CIRS Basics - Lab Tests'),
+    ('3', '1', 'https://vimeo.com/662743278','CIRSx Medical Glossary - Part 4, Section 3: CIRS Basics - Medicine and Other Therapies'),
+    ('3', '1', 'https://vimeo.com/662743675','CIRSx Medical Glossary - Part 5: Molecular Hypometabolism Basics!'),
+    ('3', '1', 'https://vimeo.com/679720362','CIRSx Medical Glossary - Part 6: Medical Differential Diagnosis'),
+    ('3', '1', 'https://vimeo.com/669176887','Testing & Inspection Equipment - Part 1'),
+    ('3', '1', 'https://vimeo.com/669177094','Testing & Inspection Equipment - Part 2'),
+    ('3', '1', 'https://vimeo.com/673715724','Testing & Inspection Equipment - Part 3'),
+    ('3', '1', 'https://vimeo.com/674007341','Test Methods - Part 1'),
+    ('3', '1', 'https://vimeo.com/669177791','Test Methods - Part 2'),
+    ('3', '1', 'https://vimeo.com/669178107','Test Methods - Part 3'),
+    ('3', '1', 'https://vimeo.com/680062977','Environmental Analysis Methods');
+
+insert into cirsx_prod.public.library_patienthelp (name, doc_num_id, vid_order)
+    values
+        ('Overview of the Biotoxin Pathway with Dr Eric Dorninger', '1443', '1'),
+        ('So You Think You May Have CIRS', '1444', '2'),
+        ('CIRSx: How is CIRS Diagnosed', '1445', '3'),
+        ('What to Expect with CIRS Treatment', '1446', '4'),
+        ('DocTalk: What is CIRS? - 1 Introduction', '1447', '5'),
+        ('DocTalk: What is CIRS? - 2 Regulation and Disregulation', '1448', '6'),
+        ('DocTalk: What is CIRS? - 3 Immune System', '1449', '7'),
+        ('DocTalk: What is CIRS? - 4 Perfusion', '1450', '8'),
+        ('DocTalk: What is CIRS? - 5 Energy Production', '1451', '9'),
+        ('DocTalk: What is CIRS? - 6 Tight Junctions', '1452', '10'),
+        ('DocTalk: What is CIRS? - 7 Hypothalamus', '1453', '11'),
+        ('DocTalk: What is CIRS? - 8 Pituitary', '1454', '12'),
+        ('DocTalk: What is CIRS? - 9 Autonomic Nervous System', '1455', '13'),
+        ('DocTalk: What is CIRS? - 10 Putting It All Together', '1456', '14'),
+        ('CIRSx Medical Glossary - Part 1: Microbiology','1457','15'),
+        ('CIRSx Medical Glossary - Part 2: Cell Biology Basics!','1458','16'),
+        ('CIRSx Medical Glossary - Part 3, Section 1: Immune System','1459','17'),
+        ('CIRSx Medical Glossary - Part 3, Section 2: Immune System','1460','18'),
+        ('CIRSx Medical Glossary - Part 4, Section 1: CIRS Basics Pathophysiology','1461','19'),
+        ('CIRSx Medical Glossary - Part 4, Section 2: CIRS Basics - Lab Tests','1462','20'),
+        ('CIRSx Medical Glossary - Part 4, Section 3: CIRS Basics - Medicine and Other Therapies','1463','21'),
+        ('CIRSx Medical Glossary - Part 5: Molecular Hypometabolism Basics!','1464','22'),
+        ('CIRSx Medical Glossary - Part 6: Medical Differential Diagnosis','1465','23'),
+        ('Testing & Inspection Equipment - Part 1','1466','24'),
+        ('Testing & Inspection Equipment - Part 2','1467','25'),
+        ('Testing & Inspection Equipment - Part 3','1468','26'),
+        ('Test Methods - Part 1','1469','27'),
+        ('Test Methods - Part 2','1470','28'),
+        ('Test Methods - Part 3','1471','29'),
+        ('Environmental Analysis Methods','1472','30');
+

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}{% load static %}{% block content %}
+  <div class="page-title">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="sub-title"><img src={% static 'images/sub-title.svg'%} loading="lazy" alt="Icon">
+        <div class="text-block-17">Shoey Awards</div>
+      </div>
+    </div>
+    <h1 class="about-main-title">2024 Shoey Awards</h1>   
+  </div>
+  <div class="page-data">
+    <section class="interviews shoey-awards">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="award-container">
+          {% for a in award %}
+            <div class="award">
+            <div class="post-img"><img src={% static a.image %} loading="lazy" alt="Post Image" class="post-image"></div>
+            <div class="post-data">
+              <div>
+                <h4 class="post-title">{{ a.name }} - {{ a.description }}</h4>
+              </div>
+            </div>
+          </div>
+          {% endfor %}  
+        </div>
+      </div>
+    </section>
+<!--
+      <section class="interviews shoey-awards">
+      <div class="w-layout-blockcontainer container w-container">
+          <div class="shoey-award-container">
+          {% for a in award %}
+            <div class="award">
+            <div class="post-img"><img src={% static a.image %} loading="lazy" alt="Post Image" class="post-image"></div>
+            <div class="post-data">
+              <div>
+                <h4 class="post-title">{{ a.name }} - {{ a.description }} </h4>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    -->
+  </div>
+{% endblock %}

@@ -1,31 +1,77 @@
-{% extends 'base.html' %}{% load static   %}{% block content %}
- <section class="hero">
+{% extends 'base.html' %}{% load static %}{% block content %}
+  <div class="page-data">
+    <section class="hero">
       <div class="hero-head">
-        <h1 class="hero-title">Leading the Way in Treating, Educating, and Serving Those with CIRS.</h1>
+        <h1 class="hero-title">Leading the Way in Treating, Educating, &amp; Serving Those with CIRS.</h1>
       </div>
-      <div class="hero-img"><img src={% static 'images/helena-lopes-PGnqT0rXWLs-unsplash-1.jpg'%} loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 85vw, (max-width: 991px) 86vw, (max-width: 1439px) 87vw, (max-width: 1919px) 88vw, 1660px" srcset="{% static 'images/helena-lopes-PGnqT0rXWLs-unsplash-1-p-500.jpg' %} 500w, {% static 'images/helena-lopes-PGnqT0rXWLs-unsplash-1-p-800.jpg' %} 800w, {% static 'images/helena-lopes-PGnqT0rXWLs-unsplash-1-p-1080.jpg' %} 1080w, {% static 'images/helena-lopes-PGnqT0rXWLs-unsplash-1-p-1600.jpg' %} 1600w,{% static 'images/helena-lopes-PGnqT0rXWLs-unsplash-1-p-2000.jpg' %} 2000w, {% static 'images/helena-lopes-PGnqT0rXWLs-unsplash-1-p-2600.jpg' %} 2600w,{% static 'images/helena-lopes-PGnqT0rXWLs-unsplash-1.jpg' %} 2736w" alt="Hero Image" class="hero-image">
-        <div class="hero-wrap">
-          <a id="w-node-_1084fb6b-9d06-a4f5-b481-bacfecf4d04d-838e581b" data-w-id="1084fb6b-9d06-a4f5-b481-bacfecf4d04d" href="video-library.html" class="hero-block w-inline-block">
-            <h4 class="hero-info-title">Video Archives</h4>
-            <div class="hero-inner">
-              <p class="hero-info">Explore our video library from past conferences and webinars with insights and research on remediation, testing, and legal considerations.</p><img src={% static 'images/ic-cross-arrow.svg' %} loading="lazy" style="-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Arrow" class="arrow">
+      <div class="hero-img"><img src="{% static 'images/IMG_6937-1.png' %}" loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 85vw, (max-width: 991px) 86vw, (max-width: 1439px) 87vw, (max-width: 1919px) 88vw, 1660px" srcset="{% static 'images/IMG_6937-1-p-500.png' %} 500w, {% static 'images/IMG_6937-1-p-800.png' %} 800w, {% static 'images/IMG_6937-1-p-1080.png' %} 1080w, {% static 'images/IMG_6937-1-p-1600.png' %} 1600w, {% static 'images/IMG_6937-1.png' %} 1920w" alt="Hero Image" class="hero-image"></div>
+      <div class="hero-wrap">
+        <a id="w-node-_1084fb6b-9d06-a4f5-b481-bacfecf4d04d-838e581b" data-w-id="1084fb6b-9d06-a4f5-b481-bacfecf4d04d" href="{% url 'video-library' %}" class="hero-block w-inline-block">
+          <div class="div-block-33">
+            <div class="div-block-34"><img src="{% static 'images/Vector-1.svg' %}" loading="lazy" alt="" class="image-8"></div>
+            <h2 class="hero-info-title">Curated Videos</h2>
+          </div>
+          <div class="hero-inner">
+            <p class="hero-info">Explore our research and information on CIRS and other inflammatory illnesses for healthcare professionals, environmental services, and for patients themselves.</p>
+            <div class="div-block-32">
+              <div class="text-block-26">Browse</div><img src="{% static 'images/ic-cross-arrow.svg' %}" loading="lazy" style="-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Arrow" class="arrow">
             </div>
-          </a>
-          <a data-w-id="61351b75-57e8-0fc1-84bb-446134971c50" href="resource-library.html" class="hero-block w-inline-block">
-            <h4 class="hero-info-title">Resource Library</h4>
-            <div class="hero-inner">
-              <p class="hero-info">Find research on (CIRS) and other inflammatory illnesses for healthcare professionals, environmental services, and patients.</p><img src={% static 'images/ic-cross-arrow.svg' %} loading="lazy" style="-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Arrow" class="arrow">
-            </div>
-          </a>
-          <a id="w-node-c6cb409e-82ca-c575-19a6-a6ac39662f57-838e581b" data-w-id="c6cb409e-82ca-c575-19a6-a6ac39662f57" href="patient-resources.html" class="hero-block w-inline-block">
-            <h4 class="hero-info-title">Patient Help</h4>
-            <div class="hero-inner">
-              <p class="hero-info">Educational resources for patients on CIRS and related health symptoms to help you stay informed and find compassion on your healing journey.</p><img src={% static 'images/ic-cross-arrow.svg' %} loading="lazy" style="-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Arrow" class="arrow">
-            </div>
-          </a>
-        </div>
+          </div>
+        </a>
+        <a data-w-id="61351b75-57e8-0fc1-84bb-446134971c50" href="{% url 'resource-library' %}" class="hero-block w-inline-block">
+          <div class="div-block-33">
+            <div class="div-block-34"><img src="{%  static 'images/Vector.svg' %}" loading="lazy" alt="" class="image-8"></div>
+            <h2 class="hero-info-title">Research Papers</h2>
+          </div>
+          <div class="hero-inner">
+            <p class="hero-info">Find research on (CIRS) and other inflammatory illnesses for healthcare professionals, environmental services, and patients.</p>
+          </div>
+          <div class="div-block-32">
+            <div class="text-block-26">See All</div><img src="{% static 'images/ic-cross-arrow.svg' %}" loading="lazy" style="-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Arrow" class="arrow">
+          </div>
+        </a>
+        <a id="w-node-c6cb409e-82ca-c575-19a6-a6ac39662f57-838e581b" data-w-id="c6cb409e-82ca-c575-19a6-a6ac39662f57" href="{% url 'patient-resources' %}" class="hero-block w-inline-block">
+          <div class="div-block-33">
+            <div class="div-block-34"><img src="{% static 'images/Group-39901.svg' %}" loading="lazy" alt="" class="image-8"></div>
+            <h2 class="hero-info-title">Patient Help</h2>
+          </div>
+          <div class="hero-inner">
+            <p class="hero-info">Educational resources for patients on CIRS and related health symptoms to help you stay informed and find compassion on your healing journey.</p>
+          </div>
+          <div class="div-block-32">
+            <div class="text-block-26">Find Resources</div><img src="{% static 'images/ic-cross-arrow.svg' %}" loading="lazy" style="-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="Arrow" class="arrow">
+          </div>
+        </a>
       </div>
     </section>
+    <div class="w-layout-blockcontainer banner-container padding-adjust w-container">
+      <div class="div-block-23"><img src="{% static 'images/Group-39885.svg' %}" loading="lazy" alt="" class="image-7"></div>
+      <div class="div-block-22 block-title">
+        <div class="div-block-27 no-gap">
+          <p class="paragraph-17 conference-style">CIRSx/SurvivingMold Annual Conference<br></p>
+          <p class="paragraph-17 conference-style">June 6th-8th 2025<br></p>
+          <p class="paragraph-17 conference-style">Tempe, Arizona    <br></p>
+        </div>
+        <h3 class="heading-5 conference-header">OMNI Tempe at ASU</h3>
+        <p class="paragraph-18">This year’s conference  will encompass our community’s latest and greatest academic discoveries, fill in the gaps on complex topics, provide case studies (human health and building health), and focus on the essentials and latest on building health to obtain human health. ⁠</p>
+        <div class="div-block-25">
+          <div class="div-block-26">
+            <a href="#" class="button w-button">**Coming Soon**</a>
+            <a href="https://cirsx.wufoo.com/forms/qd66od00o78unb/" class="w-inline-block">
+              <div class="text-block-25">Submit an abstract</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-layout-blockcontainer banner-container w-container">
+      <div class="heading-left">
+        <h3 class="heading-5">Is CIRS Worse Than Asbestos?</h3>
+        <p class="paragraph-17">Watch Dr. Scott McMahon &amp; Dr. Ritchie Shoemaker of CIRSx.com speak with Dr. Jordan B. Peterson as they discuss their potentially groundbreaking research into CIRS, or Chronic Inflammatory Response Syndrome. <br></p>
+        <a href="https://youtu.be/LGG7om1hHcU?si=IvUql6V1U9OL3un3" class="button w-button">Watch Now</a>
+      </div>
+      <div class="video-thumbnail"><img src="{% static 'images/Screenshot-2024-09-25-at-7.05.15-PM.png' %}" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 991px) 495px, (max-width: 1279px) 50vw, (max-width: 1439px) 41vw, (max-width: 1919px) 40vw, 747px" srcset="{% static 'images/Screenshot-2024-09-25-at-7.05.15-PM-p-500.png' %} 500w, {% static 'images/Screenshot-2024-09-25-at-7.05.15-PM-p-800.png' %} 800w, {% static 'images/Screenshot-2024-09-25-at-7.05.15-PM-p-1080.png' %} 1080w, {% static 'images/Screenshot-2024-09-25-at-7.05.15-PM-p-1600.png' %} 1600w, {% static 'images/Screenshot-2024-09-25-at-7.05.15-PM-p-2000.png' %} 2000w, {% static 'images/Screenshot-2024-09-25-at-7.05.15-PM.png' %} 2530w" alt="" class="image-6"></div>
+    </div>
     <section class="about">
       <div class="w-layout-blockcontainer container w-container">
         <div class="div-block">
@@ -35,7 +81,7 @@
           <div class="about-title-hero">
             <h2 class="about-us-title about-us-horizontal">Our Mission</h2>
             <p class="about-info-text">At the forefront of health innovation, our organization is dedicated to creating and refining standards that stay on the cutting edge, using an evidence-based approach. The CIRSx mission is to transform multiple industries, revolutionizing their approaches toward Chronic Inflammatory Response Syndrome (CIRS) and other environmentally related health challenges.<br><br>
-              <a href="about.html"><span class="text-span-3">Learn More</span></a><br>
+              <!--<a href="{% url 'about' %}"><span class="text-span-3">Learn More</span></a><br>-->
             </p>
           </div>
           <div class="gray-spacer"></div>
@@ -43,7 +89,7 @@
             <h2 class="about-us-title about-us-horizontal">Meet The Team</h2>
             <div class="div-block-12">
               <p class="about-info-text">Our team comprises leading medical experts renowned for their dedication and expertise in the field of Chronic Inflammatory Response Syndrome (CIRS) and environmental health. With decades of collective experience, our specialists are at the cutting edge of research and treatment, bringing a wealth of knowledge and innovative approaches to our mission.<br></p>
-              <a href="#" class="w-inline-block">
+              <a href="{% url 'about' %}" class="w-inline-block">
                 <div class="text-block-12">Our Experts</div>
               </a>
             </div>
@@ -53,7 +99,7 @@
             <h2 class="about-us-title about-us-horizontal">Healers &amp; Helpers</h2>
             <div class="div-block-12">
               <p class="about-info-text">At the heart of our organization are the compassionate healers and dedicated helpers who bring our mission to life. These professionals are not just experts in their fields but are also deeply committed to providing personalized care and support to those affected by Chronic Inflammatory Response Syndrome (CIRS).<br></p>
-              <a href="healers-helpers.html" class="w-inline-block">
+              <a href="{% url 'healers-helpers' %}" class="w-inline-block">
                 <div class="text-block-12">Learn More</div>
               </a>
             </div>
@@ -64,41 +110,43 @@
     <section class="services">
       <div class="w-layout-blockcontainer container w-container">
         <div class="section-title m-large">
-          <a href="cirsx-institute.html" class="link-block w-inline-block">
-            <div class="sub-title"><img src={% static 'images/icon.svg' %} loading="lazy" alt="Icon" class="image-4">
+          <a href="{% url 'cirsx-institute' %}" class="link-block w-inline-block">
+            <div class="sub-title"><img src="{% static 'images/icon.svg' %}" loading="lazy" alt="Icon" class="image-4">
               <div class="red">CIRSx Institute</div>
             </div>
           </a>
           <h2 class="title">Credentialed Courses for Professionals</h2>
         </div>
+          <br>
         <div class="service-wrap">
           <div class="featured-services">
             <a data-w-id="0fce1934-fde0-3c3a-d092-8bc8ff909947" href="https://institute.cirsx.com/p/medically-important-remediation-101" class="service-link full-width w-inline-block">
-              <div class="service-img full-width"><img src={% static 'images/IMG_2477.jpeg' %} loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" sizes="(max-width: 479px) 92vw, (max-width: 991px) 27vw, (max-width: 1279px) 26vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 526.6640625px" alt="Service Image" srcset={% static 'images/IMG_2477-p-500.jpeg' %} 500w, {% static 'images/IMG_2477-p-800.jpeg' %} 800w, {% static 'images/IMG_2477-p-1080.jpeg' %} 1080w, {% static 'images/IMG_2477-p-1600.jpeg' %} 1600w, {% static 'images/IMG_2477-p-2000.jpeg' %} 2000w, {% static 'images/IMG_2477-p-2600.jpeg' %} 2600w, {% static 'images/IMG_2477-p-3200.jpeg' %} 3200w, {% static 'images/IMG_2477.jpeg' %} 4032w" class="service-image">
+              <div class="service-img full-width"><img src="{% static 'images/IMG_2477.jpeg' %}" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" sizes="(max-width: 479px) 92vw, (max-width: 991px) 27vw, (max-width: 1279px) 26vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 526.6640625px" alt="Service Image" srcset="{% static 'images/IMG_2477-p-500.jpeg' %} 500w, {% static 'images/IMG_2477-p-800.jpeg' %} 800w, {% static 'images/IMG_2477-p-1080.jpeg' %} 1080w, {% static 'images/IMG_2477-p-1600.jpeg' %} 1600w, {% static 'images/IMG_2477-p-2000.jpeg' %} 2000w, {% static 'images/IMG_2477-p-2600.jpeg' %} 2600w, {% static 'images/IMG_2477-p-3200.jpeg' %} 3200w, {% static 'images/IMG_2477.jpeg' %} 4032w" class="service-image">
                 <div class="div-block-11"></div>
               </div>
               <div class="service-data no-hover-animation">
-                <h6 class="service-title">MIR 101: Medically Important Remediation</h6><img src={% static 'images/is-service-arrow.svg' %} loading="lazy" style="opacity:0" alt="Arrow" class="arrow">
+                <h3 class="service-title">MIR 101: Medically Important Remediation</h3><img src="{% static 'images/is-service-arrow.svg' %}" loading="lazy" style="opacity:0" alt="Arrow" class="arrow">
               </div>
             </a>
             <a data-w-id="8060e60a-0a37-42d7-e76f-ebb036073c0d" href="https://institute.cirsx.com/p/coaching-and-consulting-level-one" class="service-link full-width w-inline-block">
-              <div class="service-img full-width"><img src={% static 'images/pexels-olly-3760089.jpg' %} loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" sizes="(max-width: 479px) 92vw, (max-width: 991px) 27vw, (max-width: 1279px) 26vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 526.6640625px" alt="Service Image" srcset="{% static 'images/pexels-olly-3760089-p-500.jpg' %} 500w, {% static 'images/pexels-olly-3760089-p-800.jpg' %} 800w, {% static 'images/pexels-olly-3760089-p-1080.jpg' %} 1080w, {% static 'images/pexels-olly-3760089-p-1600.jpg' %} 1600w, {% static 'images/pexels-olly-3760089-p-2000.jpg' %} 2000w, {% static 'images/pexels-olly-3760089-p-2600.jpg' %} 2600w, {% static 'images/pexels-olly-3760089-p-3200.jpg' %} 3200w, {% static 'images/pexels-olly-3760089.jpg' %} 7680w" class="service-image">
+              <div class="service-img full-width"><img src="{% static 'images/Level1Coaching.jpg' %}" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" sizes="(max-width: 479px) 92vw, (max-width: 991px) 27vw, (max-width: 1279px) 26vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 526.6640625px" alt="Service Image" srcset="{% static 'images/Level1Coaching.jpg' %} 500w, {% static 'images/Level1Coaching.jpg' %} 800w, {% static 'images/Level1Coaching.jpg' %} 1080w, {% static 'images/Level1Coaching.jpg' %} 1600w, {% static 'images/Level1Coaching.jpg' %} 2000w, {% static 'images/Level1Coaching.jpg' %} 2600w, {% static 'images/Level1Coaching.jpg' %} 3200w, {% static 'images/Level1Coaching.jpg' %} 7680w" class="service-image">
                 <div class="div-block-11"></div>
               </div>
               <div class="service-data no-hover-animation">
-                <h6 class="service-title">CIRSx Level 1: Coaching &amp; Consulting</h6><img src={% static 'images/is-service-arrow.svg' %} loading="lazy" style="opacity:0" alt="Arrow" class="arrow">
+                <h3 class="service-title">CIRSx Level 1: Coaching &amp; Consulting</h3><img src="{% static 'images/is-service-arrow.svg' %}" loading="lazy" style="opacity:0" alt="Arrow" class="arrow">
               </div>
             </a>
             <a data-w-id="0a94f5ff-c6b6-33e5-3bb3-04294a82f3fd" href="https://institute.cirsx.com/p/evaluating-and-winning-a-mold-injury-exposure-case" class="service-link full-width w-inline-block">
-              <div class="service-img full-width"><img src={% static 'images/pexels-1363928-2935910.avif' %} loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" sizes="(max-width: 479px) 92vw, (max-width: 991px) 27vw, (max-width: 1279px) 26vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 526.6640625px" alt="Service Image" srcset={% static 'images/pexels-1363928-2935910-p-500.jpg' %} 500w, {% static 'images/pexels-1363928-2935910-p-800.jpg' %} 800w, {% static 'images/pexels-1363928-2935910.avif' %} 3798w" class="service-image">
+              <div class="service-img full-width"><img src="{% static 'images/Legal101.jpg' %}" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" sizes="(max-width: 479px) 92vw, (max-width: 991px) 27vw, (max-width: 1279px) 26vw, (max-width: 1439px) 27vw, (max-width: 1919px) 29vw, 526.6640625px" alt="Service Image" srcset="{% static 'images/Legal101.jpg' %} 500w, {% static 'images/Legal101.jpg' %} 800w, {% static 'images/Legal101.jpg' %} 3798w" class="service-image">
                 <div class="div-block-11"></div>
               </div>
               <div class="service-data no-hover-animation">
-                <h6 class="service-title">Legal 101: Winning A Mold Exposure Case</h6><img src={% static 'images/is-service-arrow.svg' %} loading="lazy" style="opacity:0" alt="Arrow" class="arrow">
+                <h3 class="service-title">Legal 101: Winning A Mold Exposure Case</h3><img src="{% static 'images/is-service-arrow.svg' %}" loading="lazy" style="opacity:0" alt="Arrow" class="arrow">
               </div>
             </a>
           </div>
         </div>
       </div>
     </section>
+  </div>
 {% endblock %}

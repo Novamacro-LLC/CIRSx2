@@ -2218,8 +2218,7 @@ blockquote {
   text-decoration: none;
 }
 
-.post-img {
-  width: 266px;
+.post-img {CS
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;

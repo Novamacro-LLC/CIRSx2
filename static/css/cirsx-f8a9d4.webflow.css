@@ -2219,6 +2219,7 @@ blockquote {
 }
 
 .post-img {
+  width: 266px;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -2235,6 +2236,7 @@ blockquote {
 
 .post-data {
   margin-top: 12px;
+  padding: 15px;
 }
 
 .post-title {

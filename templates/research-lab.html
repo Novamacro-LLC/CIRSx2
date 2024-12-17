@@ -11,7 +11,21 @@
     <div class="w-layout-blockcontainer container-4 generic-message w-container">
       <p class="paragraph-12">The mission of the <strong>CIRSx Research Committee</strong> is to advance the science through:<br><br>Conducting rigorous, well-designed research on the prevention, diagnosis, and treatment of innate immune system dysregulation caused by biotoxin exposure and dissemination of evidence-based research findings to increase biotoxin illness awareness among the general public, medical providers, lawyers, builders, and environmental professionals. </p>
       <p class="paragraph-12">If you would like to donate to our mission click the button below</p>
-      <a href="https://app.goodgiving.online/spp/Giveandsupport" class="hero-block w-inline-block">Dontate Now!</a>
+      <a href="https://app.goodgiving.online/spp/Giveandsupport" class="div-block-32 text-block-26" style="width: 240px">Donate Now!</a>
     </div>
   </section>
+    <section class="vision">
+    <div class="w-layout-blockcontainer container center w-container">
+      <section class="about-hero">
+        <div class="about-images">
+            {% for c in comm %}
+              <div class="about-img"><img src="{% static c.image %}" loading="eager" sizes="(max-width: 479px) 94vw, (max-width: 767px) 25vw, (max-width: 991px) 24vw, (max-width: 1919px) 23vw, 400px" alt="About Image" class="about-image adjust-image-top">
+                <div class="text-block-13">{{c.name}}</div>
+                <p class="paragraph-13">{{c.bio}} </p>
+              </div>
+            {% endfor %}
+        </div>
+      </section>
+    </div>
+    </section>  
   {% endblock content %}

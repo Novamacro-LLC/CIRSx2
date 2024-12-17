@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from library.models import Document
-from .models import BOTY, ShoeyAwards
+from .models import BOTY, ShoeyAwards, ResearchCommittee
 
 
 def home(request):
@@ -36,8 +36,8 @@ def conference(request):
 
 def research_lab(request):
     title = 'Research Lab'
-    # Add to db and CTA
-    context = {'title': title}
+    comm = ResearchCommittee.objects.filter(active=True).order_by('name')
+    context = {'title': title, 'comm':comm}
     return render(request, 'research-lab.html', context)
 
 def shoey_awards(request):

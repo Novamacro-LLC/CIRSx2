@@ -18,3 +18,9 @@ class BOTY(models.Model):
 
     def __str__(self):
         return self.title
+
+class ResearchCommittee(models.Model):
+    name = models.CharField(max_length=200)
+    bio = models.TextField()
+    image = models.CharField(max_length=100)
+    active = models.BooleanField()

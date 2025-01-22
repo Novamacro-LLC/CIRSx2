@@ -402,7 +402,7 @@ blockquote {
   grid-auto-columns: 1fr;
   justify-content: space-around;
   align-items: stretch;
-  display: grid;
+  display: flex;
 }
 
 .navbar-wrapper {
@@ -2194,7 +2194,7 @@ blockquote {
 
 .interviews {
   margin-bottom: var(--desktop-space);
-  flex-flow: wrap;
+  flex-flow: row;
   justify-content: space-between;
   align-items: stretch;
   display: flex;
@@ -2222,19 +2222,19 @@ blockquote {
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  width: 355px;
 }
 
 .post-image {
   clear: both;
-  object-fit: contain;
+  object-fit: cover;
+  width: 100%;
+  max-width: none;
   min-height: auto;
   max-height: none;
 }
 
 .post-data {
   margin-top: 12px;
-  padding: 15px;
 }
 
 .post-title {
@@ -2490,12 +2490,16 @@ blockquote {
 }
 
 .about-images {
-  grid-column-gap: 20px;
-  grid-row-gap: 15px;
-  flex-flow: row;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  vertical-align: baseline;
+  flex-flow: wrap;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
+  grid-auto-flow: row dense;
+  place-content: stretch space-around;
+  place-items: stretch center;
   margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -3614,7 +3618,11 @@ blockquote {
 }
 
 .div-block-13._50 {
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 50%;
+  display: flex;
 }
 
 .paragraph {
@@ -3866,6 +3874,10 @@ blockquote {
 
 .container-4.generic-message {
   margin-left: 35px;
+}
+
+.paragraph-12 {
+  display: block;
 }
 
 .text-block-23 {
@@ -4310,6 +4322,14 @@ blockquote {
   font-weight: 400;
 }
 
+.div-block-40 {
+  position: static;
+}
+
+.body-2 {
+  display: block;
+}
+
 @media screen and (min-width: 1280px) {
   .container.bm100 {
     grid-column-gap: 23px;
@@ -4672,7 +4692,7 @@ blockquote {
   }
 
   .image {
-    width: 200px;
+    width: 120px;
   }
 
   .image-2 {
@@ -4880,7 +4900,7 @@ blockquote {
     grid-column-gap: 21px;
     grid-row-gap: 21px;
     grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-columns: 1fr;
     max-width: 1660px;
     display: grid;
@@ -5824,7 +5844,7 @@ blockquote {
   }
 
   .post-link {
-    margin-bottom: 10px;
+    margin-bottom: 22px;
   }
 
   .post-image {
@@ -7081,6 +7101,7 @@ blockquote {
 
   .contact-link-list {
     align-self: stretch;
+    margin-top: 0;
   }
 
   .contact-link {
@@ -7148,8 +7169,8 @@ blockquote {
   }
 
   .faq {
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-column-gap: 19px;
+    grid-row-gap: 19px;
     flex-flow: column;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -7864,6 +7885,12 @@ blockquote {
     align-self: stretch;
     align-items: flex-start;
     width: 100%;
+    display: flex;
+  }
+
+  .link {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     display: flex;
   }
 

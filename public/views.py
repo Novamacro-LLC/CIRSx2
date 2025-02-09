@@ -51,3 +51,8 @@ def conference_archives(request):
     title = 'Past Conferences'
     context = {'title': title}
     return render(request, 'archives.html', context)
+
+def conference_exhibitors(request):
+    title = 'Exhibitors'
+    context = {'title': title}
+    return render(request, 'conference-exhibitors.html', context)

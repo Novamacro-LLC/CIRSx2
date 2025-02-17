@@ -18,7 +18,7 @@ sys = platform.system()
 def chatgpt_init():
     try:
         model = llm.get_model('gpt-3.5-turbo')
-        model.key = os.environ.get('open_ai_key')  # Changed from os.environ() to os.environ.get()
+        model.key = os.environ.get('open_ai_key')
         conversation = model.conversation()
         return conversation
     except Exception as e:
@@ -59,87 +59,96 @@ def run():
     )
 
     for d in docs:
-        image_file_list = []  # Moved inside the loop to ensure fresh list for each document
+        image_file_list = []
         try:
             pdf_file = d.doc_path
             print(f"Processing PDF file: {pdf_file}")
 
-            # Set up system-specific configurations
             if platform.system() == 'Windows':
                 pytesseract.pytesseract.tesseract_cmd = (
                     r'C:\Program Files\Tesseract-OCR\tesseract.exe'
                 )
                 path_to_poppler_exe = Path(r'C:\Program Files\poppler-23.11.0\Library\bin')
             else:
-                path_to_poppler_exe = Path('usr/share/poppler')  # Fixed path separator
+                path_to_poppler_exe = Path('usr/share/poppler')
 
-            # Initialize variables
             full_text = ''
 
-            # Fetch and read PDF
-            req = urllib.request.Request(pdf_file, headers={'User-Agent': 'Magic Browser'})
-            file = urllib.request.urlopen(req).read()
-            file_bytes = io.BytesIO(file)
-            remote_file = PdfReader(file_bytes)
-            count = len(remote_file.pages)
-            print(f"Number of pages in PDF: {count}")
+            try:
+                req = urllib.request.Request(pdf_file, headers={'User-Agent': 'Magic Browser'})
+                file = urllib.request.urlopen(req).read()
+                file_bytes = io.BytesIO(file)
+                remote_file = PdfReader(file_bytes)
+                count = len(remote_file.pages)
+                print(f"Number of pages in PDF: {count}")
+            except Exception as e:
+                print(f"Error reading PDF file: {str(e)}")
+                continue
 
             with TemporaryDirectory() as tempdir:
-                # Convert PDF to images
-                if count >= 100:
-                    pdf_pages = convert_from_path(
-                        pdf_file, 500,
-                        poppler_path=path_to_poppler_exe,
-                        last_page=75
-                    )
-                else:
-                    pdf_pages = convert_from_path(
-                        pdf_file, 500,
-                        poppler_path=path_to_poppler_exe
-                    )
+                try:
+                    if count >= 100:
+                        pdf_pages = convert_from_path(
+                            pdf_file, 500,
+                            poppler_path=path_to_poppler_exe,
+                            last_page=75
+                        )
+                    else:
+                        pdf_pages = convert_from_path(
+                            pdf_file, 500,
+                            poppler_path=path_to_poppler_exe
+                        )
 
-                # Save pages as images
-                for page_enumeration, page in enumerate(pdf_pages, start=1):
-                    filename = str(Path(tempdir) / f'page_{page_enumeration:03}.jpg')  # Fixed path creation
-                    page.save(filename, 'JPEG')
-                    image_file_list.append(filename)
+                    for page_enumeration, page in enumerate(pdf_pages, start=1):
+                        filename = str(Path(tempdir) / f'page_{page_enumeration:03}.jpg')
+                        page.save(filename, 'JPEG')
+                        image_file_list.append(filename)
 
-                print(f"Number of images created: {len(image_file_list)}")
+                    print(f"Number of images created: {len(image_file_list)}")
 
-                # Process first two pages for sample text
-                if len(image_file_list) >= 2:
+                    if not image_file_list:
+                        print(f"Warning: No images were created for {pdf_file}")
+                        continue
+
+                    # Process first page
                     data1 = str(pytesseract.image_to_string(Image.open(image_file_list[0])))
                     data1 = data1.replace('-\n', '')
-                    data2 = str(pytesseract.image_to_string(Image.open(image_file_list[1])))
-                    data2 = data2.replace('-\n', '')
-                    sample = data1 + ' ' + data2
-                else:
-                    # Handle cases with fewer pages
-                    sample = str(pytesseract.image_to_string(Image.open(image_file_list[0]))) if image_file_list else ""
-                    sample = sample.replace('-\n', '')
 
-                # Process all pages for full text
-                for image_file in image_file_list:
-                    text = str(pytesseract.image_to_string(Image.open(image_file)))
-                    text = text.replace('-\n', '')
-                    full_text += text
+                    # Set sample text based on number of pages
+                    if len(image_file_list) > 1:
+                        data2 = str(pytesseract.image_to_string(Image.open(image_file_list[1])))
+                        data2 = data2.replace('-\n', '')
+                        sample = data1 + ' ' + data2
+                        print("Processed first two pages for sample text")
+                    else:
+                        sample = data1
+                        print("Processed single page for sample text")
 
-                print("Full text extraction completed")
+                    # Process all available pages for full text
+                    for image_file in image_file_list:
+                        text = str(pytesseract.image_to_string(Image.open(image_file)))
+                        text = text.replace('-\n', '')
+                        full_text += text
 
-                # Update document
-                d.doc_txt = full_text
-                d.author = author(sample)
-                print(f"Authors: {d.author}")
-                d.pub_dt = pub_date(sample)
-                print(f"Publication date: {d.pub_dt}")
-                d.save()
+                    print("Text extraction completed")
 
-                print(f"Successfully processed document: {pdf_file}")
+                    # Update document with extracted information
+                    d.doc_txt = full_text
+                    d.author = author(sample)
+                    print(f"Authors extracted: {d.author}")
+                    d.pub_dt = pub_date(sample)
+                    print(f"Publication date extracted: {d.pub_dt}")
+                    d.save()
+
+                    print(f"Successfully processed document: {pdf_file}")
+
+                except Exception as e:
+                    print(f"Error during PDF processing: {str(e)}")
+                    continue
 
         except Exception as e:
             print(f"Error processing document {d.doc_path}: {str(e)}")
-            continue  # Continue with next document if current one fails
+            continue
 
         finally:
-            # Clear list even if an error occurred
             image_file_list.clear()

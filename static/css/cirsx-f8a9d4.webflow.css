@@ -5026,8 +5026,11 @@ blockquote {
 }
 
 .text-size-large {
-  flex: 1;
+  flex: none;
+  justify-content: center;
+  align-items: center;
   font-size: 1.1rem;
+  display: block;
 }
 
 .event31_accordion {

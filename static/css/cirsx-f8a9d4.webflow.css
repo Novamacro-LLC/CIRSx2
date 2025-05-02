@@ -7,6 +7,12 @@
   --landscape-mobile-space: 80px;
   --portrait-mobile-space: 60px;
   --desktop-space: 150px;
+  --untitled-ui--gray600: #475467;
+  --untitled-ui--gray700: #344054;
+  --untitled-ui--primary100: #f4ebff;
+  --untitled-ui--white: white;
+  --untitled-ui--primary600: #7f56d9;
+  --untitled-ui--primary700: red;
 }
 
 .w-layout-blockcontainer {
@@ -2209,11 +2215,23 @@ blockquote {
 }
 
 .interviews {
+  box-sizing: border-box;
   margin-bottom: var(--desktop-space);
-  flex-flow: row;
-  justify-content: space-between;
+  clear: none;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  object-fit: fill;
+  flex-flow: wrap;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  place-content: stretch space-between;
   align-items: stretch;
+  width: auto;
+  height: auto;
   display: flex;
+  position: static;
+  overflow: visible;
 }
 
 .post-list {
@@ -2230,7 +2248,8 @@ blockquote {
 }
 
 .post-link {
-  width: 100%;
+  aspect-ratio: auto;
+  width: auto;
   text-decoration: none;
 }
 
@@ -5087,10 +5106,12 @@ blockquote {
 }
 
 .heading-style-h5-4 {
+  max-width: 287.672em;
   padding-left: 10px;
   font-size: .9rem;
   font-weight: 700;
   line-height: 1.4;
+  position: static;
 }
 
 .heading-style-h5-4.paragraph {
@@ -5173,8 +5194,8 @@ blockquote {
   grid-row-gap: 16px;
   aspect-ratio: auto;
   flex-flow: row;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
+  grid-template: ". Area"
+  / 1fr 1fr;
   grid-auto-columns: 1fr;
   justify-content: space-between;
   align-self: center;
@@ -5189,6 +5210,102 @@ blockquote {
   align-self: center;
   font-size: .9rem;
   line-height: 1.4;
+}
+
+.uui-text-style-link {
+  color: var(--untitled-ui--gray600);
+  text-decoration: underline;
+  transition: color .3s;
+}
+
+.uui-text-style-link:hover {
+  color: var(--untitled-ui--gray700);
+}
+
+.uui-text-style-link.uui-text-color-primary100 {
+  color: var(--untitled-ui--primary100);
+}
+
+.uui-page-padding {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.uui-icon-1x1-xxsmall {
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+}
+
+.uui-text-color-primary100 {
+  color: var(--untitled-ui--primary100);
+}
+
+.uui-banner22_close-button {
+  color: #fff;
+  border-radius: .5rem;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: .5rem;
+  transition: all .3s;
+  display: flex;
+}
+
+.uui-banner22_close-button:hover {
+  background-color: #fff3;
+}
+
+.uui-banner22_content-wrapper {
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  display: flex;
+}
+
+.uui-banner22_content {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3rem;
+  display: flex;
+}
+
+.uui-banner22_component {
+  background-image: linear-gradient(#bd0303, #bd0303);
+  position: relative;
+}
+
+.uui-banner22_text-wrapper {
+  grid-row-gap: .125rem;
+  text-align: center;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.uui-banner22_text {
+  color: var(--untitled-ui--white);
+  margin-right: .375rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.uui-banner22_supporting-text {
+  color: var(--untitled-ui--primary100);
+  letter-spacing: normal;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.link-4 {
+  color: var(--bg);
 }
 
 @media screen and (min-width: 1280px) {
@@ -8357,6 +8474,25 @@ blockquote {
   .heading-style-h5-4 {
     font-size: 1.25rem;
   }
+
+  .uui-page-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .uui-banner22_close-button {
+    background-color: #0000;
+  }
+
+  .uui-banner22_content-wrapper {
+    align-items: flex-start;
+  }
+
+  .uui-banner22_content {
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -9792,7 +9928,7 @@ blockquote {
   justify-self: stretch;
 }
 
-#w-node-_56eec54f-675f-c78a-70b6-413042cb65e3-838e5836 {
+#w-node-_56eec54f-675f-c78a-70b6-413042cb65e3-838e5836, #w-node-_18f5297a-327c-1111-9d7a-d2077341c4ad-838e5836 {
   align-self: start;
 }
 

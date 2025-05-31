@@ -3,6 +3,7 @@ import io
 import platform
 import urllib.request
 import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r'D:\Users\bdavison\Tesseract\tesseract.exe'
 import llm
 from PyPDF2 import PdfReader
 from pdf2image import convert_from_path

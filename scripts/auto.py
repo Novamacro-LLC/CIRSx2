@@ -67,9 +67,9 @@ def run():
 
             if platform.system() == 'Windows':
                 pytesseract.pytesseract.tesseract_cmd = (
-                    r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+                    r'D:\Users\bdavison\Tesseract\tesseract.exe'
                 )
-                path_to_poppler_exe = Path(r'C:\Program Files\poppler-23.11.0\Library\bin')
+                path_to_poppler_exe = Path(r'D:\Users\bdavison\poppler-24.07.0\Library\bin')
             else:
                 path_to_poppler_exe = Path('usr/share/poppler')
 

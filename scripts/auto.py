@@ -43,7 +43,7 @@ def author(text):
 def pub_date(text):
     output = chatgpt_init()
     if output:
-        chat = 'Please provide me a publication date of this text.' + text + 'Please provide the response only in the YYYY-MM-DD date format.  If no day is provided please set to 01.'
+        chat = 'Please provide me a publication date of this text.' + text + 'If there is more than one date please provide the first date listed. Please provide the response only in the YYYY-MM-DD date format.  If no day is provided please set to 01.'
         try:
             pub_dt = output.prompt(chat)
             return pub_dt.text()

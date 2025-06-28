@@ -87,7 +87,12 @@ DATABASES = {
         'USER': os.environ.get('dbUser'),
         'PASSWORD': os.environ.get('dbPassword'),
         'HOST': os.environ.get('dbHost'),
-        'PORT': os.environ.get('dbPort')
+        'PORT': os.environ.get('dbPort'),
+        'OPTIONS': {
+            'MAX_CONNS': 20,
+            'connection_timeout': 10,
+            'statement_timeout': 30000,
+        }
     }
 }
 

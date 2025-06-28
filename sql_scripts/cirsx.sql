@@ -1867,7 +1867,7 @@ insert into cirsx_prod.public.library_patienthelp (name, doc_num_id, vid_order)
         ('Test Methods - Part 2','1428','28'),
         ('Test Methods - Part 3','1429','29'),
         ('Environmental Analysis Methods','1430','30');
-*/
+
 
 insert into cirsx_prod.public.public_researchcommittee(name, bio, image, active)
     VALUES
@@ -1878,3 +1878,7 @@ insert into cirsx_prod.public.public_researchcommittee(name, bio, image, active)
         ('Dr. Christian Navarro-Torres','Christian Navarro-Torres received his Ph.D. in Language and Cognitive Science at the University of California, Irvine, and subsequently completed two postdoctoral positions at Princeton University and at Georgetown University. His academic research focuses on examining how bilingualism impacts neuroplasticity and cognitive functioning. As a CIRS patient, Christian developed a passion for helping the CIRS community using his scientific training and data analytic skills to continue developing a research program around biotoxin illness. He is now a research consultant in the Surviving Mold community. He is also the co-founder of CIRS Lab, a platform committed to educating broad audiences on the science behind CIRS.','images\Navarro-Torres Christian Headshot 2024.jpeg',True),
         ('Dr.Allison Ottenbacher, PhD','Dr. Ottenbacher received her PhD in Epidemiology from the University of Texas Health Science Center at Houston and has expertise in research methodology, data analysis, and project management. She has made contributions and led teams within consulting, academia, healthcare, and big pharma. Dr. Ottenbacher is passionate about advancing research within the CIRS community and beyond. She is motivated by her own personal experience with CIRS and has hope that the next generation will be better equipped to identify and treat this syndrome.','images\Ottenbacher Allison 2024.jpg',True),
         ('Dr. Lacey Venanzi','Dr. Lacey is a chiropractor based in Reno, NV. After she completed her Chiropractic studies at Southern California University of Health Sciences, she further specialized in allopathic and natural health, completing 1000+ hours of training in functional medicine, nutrition, immunology, and gastroenterology. After her own struggles with CIRS she further specialized in studying Dr. Shoemaker’s work. She is sought out for her work with the microbiome and how it relates to chronic illness.','images\Venanzi Lacey 2024 Headshot.png',True);
+*/
+
+-- Create GIN index for full-text search
+CREATE INDEX idx_table_fts ON cirsx_prod.public.library_document USING GIN(to_tsvector('english', doc_txt ));

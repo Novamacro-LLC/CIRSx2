@@ -89,10 +89,10 @@ DATABASES = {
         'HOST': os.environ.get('dbHost'),
         'PORT': os.environ.get('dbPort'),
         'OPTIONS': {
-            'MAX_CONNS': 20,
-            'connection_timeout': 10,
-            'statement_timeout': 30000,
-        }
+            'connect_timeout': 10,
+            'options': '-c statement_timeout=30000',
+        },
+        'CONN_MAX_AGE': 60
     }
 }
 

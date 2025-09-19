@@ -2252,11 +2252,53 @@ blockquote {
   width: auto;
   text-decoration: none;
 }
-
+/*
 .post-img {
   background-color: #fff;
   border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
   overflow: hidden;
+}
+*/
+/* Fix the video container sizing */
+.post-img {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Ensure the aspect ratio container doesn't overflow */
+.post-img > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 0;
+  position: relative;
+  padding: 56.25% 0 0 0;
+}
+
+/* Ensure iframes stay within their containers */
+.post-img iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+}
+
+/* Ensure the post links don't overflow */
+.post-link {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+/* Additional safety for grid items */
+.container.content-grid > * {
+  min-width: 0; /* Prevents grid items from overflowing */
+  max-width: 100%;
 }
 
 .post-image {
@@ -5624,10 +5666,24 @@ blockquote {
     grid-column-gap: 21px;
     grid-row-gap: 21px;
     grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /*grid-auto-columns: 1fr;*/
+    /*display: flex;*/
   }
+
+@media screen and (min-width: 1920px) {
+  .container.content-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 columns only for very large screens */
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container.content-grid {
+    grid-template-columns: 1fr;
+    /* Remove: flex-flow: column; */
+    /* Remove: display: flex; */
+  }
+}
 
   .container.horizontal-grid {
     grid-column-gap: 52px;

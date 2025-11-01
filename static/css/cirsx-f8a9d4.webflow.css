@@ -3036,7 +3036,7 @@ blockquote {
   min-width: 0%;
   max-width: none;
   height: 340px;
-  margin: -108px auto 0;
+  margin: 40px auto 0;
   padding: 16px;
   display: flex;
   position: relative;
@@ -5432,7 +5432,7 @@ blockquote {
     min-width: auto;
     max-width: none;
     height: 330px;
-    margin-top: -145px;
+    margin-top: 40px;
     padding: 20px;
     position: static;
     inset: auto 0% 0%;
@@ -5819,10 +5819,10 @@ blockquote {
     min-width: 96%;
     max-width: 85%;
     height: auto;
-    margin-top: 33px;
+    margin-top: 40px;
     padding: 25px;
     position: relative;
-    top: -200px;
+    top: auto;
     bottom: auto;
   }
 
@@ -6449,7 +6449,7 @@ blockquote {
     min-width: auto;
     max-width: 98%;
     height: auto;
-    margin-top: -213px;
+    margin-top: 40px;
     margin-bottom: 0;
     padding: 0;
     display: flex;

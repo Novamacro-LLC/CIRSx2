@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.template.defaultfilters import title
+
 from library.models import Document
 from .models import BOTY, ShoeyAwards, ResearchCommittee
 
@@ -29,7 +31,7 @@ def institute(request):
     return render(request, 'cirsx-institute.html', context)
 
 def conference(request):
-    title = 'CIRSX | 2025 Conference Registration'
+    title = 'CIRSX | 2026 Conference Registration'
     # Add details to db and CTA
     context = {'title': title}
     return render(request, 'conference.html', context)
@@ -56,3 +58,8 @@ def conference_exhibitors(request):
     title = 'Exhibitors'
     context = {'title': title}
     return render(request, 'conference-exhibitors.html', context)
+
+def conference_2025(request):
+    title = 'CIRSx 2025 Conference'
+    context = {'title': title}
+    return render(request, 'conference2025.html', context)

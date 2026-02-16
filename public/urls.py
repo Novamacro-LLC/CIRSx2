@@ -13,7 +13,8 @@ urlpatterns = [
     path('research-lab/', views.research_lab, name='research-lab'),
     path('shoey-awards/', views.shoey_awards, name='shoey-awards'),
     path('conference-archives/', views.conference_archives, name='conference-archives'),
-    path('conference-exhibitors', views.conference_exhibitors, name='conference-exhibitors')
+    path('conference-exhibitors', views.conference_exhibitors, name='conference-exhibitors'),
+    path('confernce2025', views.conference_2025, name='conference2025')
 ]
 
 
